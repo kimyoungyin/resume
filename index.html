@@ -286,7 +286,7 @@
             <ul>
                 <li>
                     Lighthouse / DevTools / Web Vitals 같은 지표와 개발자 도구를
-                    참고해 성능 개선 포인트를 찾고, 개선 효과를 확인합니다.
+                    참고해 성능 개선 포인트를 찾고, 개선 효과를 확인함
                 </li>
                 <li>
                     App Router 기반 Next.js 구조화(FSD),
@@ -349,7 +349,7 @@
                     </span>
                 </div>
                 <div class="project-meta">
-                    2026.01 ~ 진행중 <span class="divider">|</span> 팀
+                    2026.01 ~ 진행 중 <span class="divider">|</span> 팀
                     프로젝트(6명)
                     <span class="divider">|</span> 프론트엔드(인증, 시나리오 UI,
                     레이아웃 구조 설계)
@@ -417,6 +417,7 @@
                                 <li>
                                     보호 라우트 세션 검증과 401 인터셉터가
                                     경쟁적으로 발생 시
+                                    <strong>Refresh queue</strong>와
                                     <strong>Singleton Promise</strong> 패턴으로
                                     호출 단일화
                                 </li>
@@ -449,9 +450,7 @@
             <!-- Project 2 -->
             <div class="project-item">
                 <div class="project-header">
-                    <span class="project-title"
-                        >Myblog — 기술 블로그 플랫폼</span
-                    >
+                    <span class="project-title">Myblog</span>
                     <span class="project-links">
                         <a
                             href="https://myblog-navy-kappa.vercel.app"
@@ -473,7 +472,7 @@
                 </div>
                 <div class="project-desc">
                     "다른 사람은 읽을 수 있지만, 업로드는 나만 가능한" 개인
-                    블로그 플랫폼 구축
+                    블로그 플랫폼
                 </div>
                 <div class="project-details">
                     <ul>
@@ -492,8 +491,7 @@
                                 <li>
                                     TanStack Query
                                     <strong>SSR prefetch + Hydration</strong>
-                                    패턴으로 초기 로딩과 캐시 일관성을
-                                    확보했습니다.
+                                    패턴으로 초기 로딩과 캐시 일관성을 확보함
                                 </li>
                             </ul>
                         </li>
@@ -528,13 +526,13 @@
                             >
                             <ul>
                                 <li>
-                                    클라이언트는 동일 인스턴스(Singleton), 서버는
-                                    요청마다 새 인스턴스(cache()로 요청 범위 내
-                                    재사용)를 사용하는 getQueryClient 구성과,
+                                    클라이언트는 동일 인스턴스(Singleton),
+                                    서버는 요청마다 새 인스턴스(cache()로 요청
+                                    범위 내 재사용)를 사용하는 getQueryClient
+                                    구성과,
                                     <strong>쿼리 키 팩토리</strong>(posts / auth
                                     / search)로 prefetch·useQuery·invalidate 시
-                                    키를 통일해 캐시 일관성과 유지보수성을
-                                    높였습니다.
+                                    키를 통일해 캐시 일관성과 유지보수성을 높임
                                 </li>
                             </ul>
                         </li>
