@@ -18,8 +18,8 @@
             /* 인쇄 시 여백 설정 */
             @media print {
                 @page {
-                    size: A3;
-                    margin-bottom: 20mm;
+                    size: A4;
+                    /* margin-bottom: 20mm; */
                 }
                 body {
                     margin: 0;
@@ -296,21 +296,25 @@
             <h2>Core Strengths</h2>
             <ul>
                 <li>
-                    Lighthouse / DevTools / Web Vitals 같은 지표와 개발자 도구를
-                    참고해 성능 개선 포인트를 찾고, 개선 효과를 확인함
+                    Lighthouse / DevTools / Web Vitals 같은 지표와 트레이스를
+                    바탕으로 병목을 찾고, rAF·이미지 최적화·로딩 전략 조정
+                    등으로 INP·LCP·Speed Index를 개선
                 </li>
                 <li>
-                    App Router 기반 Next.js 구조화(FSD),
-                    <strong>SSR prefetch + Hydration</strong>을 활용한 캐싱
-                    전략(TanStack Query) 및 클라이언트 상태(Zustand) 분리, 쿼리
-                    키·QueryClient 구조화
+                    App Router 기반 Next.js 구조화(FSD)와 TanStack Query를
+                    중심으로, SSR prefetch + Hydration, QueryClient 패턴과 쿼리
+                    키 안정화로 서버·클라이언트 데이터 흐름과 캐싱 전략을 설계
                 </li>
                 <li>
-                    인증 안정성(JWT refresh 중복 호출 방지: Singleton
-                    Promise/Queue)
+                    JWT Refresh Singleton Promise/Queue, Supabase Auth +
+                    Middleware + Server Actions + Zustand 조합 등으로 인증/세션
+                    경쟁 상태를 제어하고, 보호 라우트와 권한 체크를 이중으로
+                    구성
                 </li>
                 <li>
-                    접근성(WAI-ARIA) 고려 및 협업 컨벤션(ESLint/Husky, PR 전략)
+                    실제 사용자 시나리오와 도메인 문제에 맞는 화면
+                    전환·검색/필터 UX를 설계하고, Intercepting/Parallel Route,
+                    FSD 구조·ESLint/Husky·코드 리뷰를 통해 팀/프로젝트 품질을
                     정리
                 </li>
             </ul>
@@ -327,13 +331,10 @@
                 <div>React, Next.js(App Router), HTML5, CSS3</div>
 
                 <div class="skill-category">Styling</div>
-                <div>Tailwind CSS</div>
+                <div>Tailwind CSS, Styled Components</div>
 
                 <div class="skill-category">Data/State</div>
-                <div>
-                    TanStack Query(React Query), Zustand (Redux Toolkit 경험
-                    있음)
-                </div>
+                <div>TanStack Query(React Query), Zustand, Redux Toolkit</div>
 
                 <div class="skill-category">Backend/DB</div>
                 <div>Supabase(PostgreSQL), MySQL (프로젝트 경험)</div>
@@ -415,6 +416,12 @@
                                     <code>useMutation</code>과 캐시 무효화를
                                     활용해 서버 상태 동기화 및 UI 업데이트
                                     흐름을 안정적으로 구성
+                                </li>
+                                <li>
+                                    시나리오 토글 스토어의 선택 상태를 정렬 기반
+                                    집합으로 리팩터링해 TanStack Query 쿼리 키를
+                                    안정화하여, 같은 시나리오 집합에 대해 캐시
+                                    재사용률을 높여 불필요한 API 호출을 줄임
                                 </li>
                             </ul>
                         </li>
