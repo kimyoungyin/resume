@@ -383,107 +383,110 @@
                 </div>
                 <div class="project-desc">
                     댓글 수집 및 AI 분석 기반으로, 사용자의 추가 관여 없이
-                    '평판'을 관리하는 B2B 서비스
+                    평판을 자동 수집·분석·관리하는 B2B 웹 서비스
                 </div>
                 <div class="project-details">
+                    <p>
+                        <span class="project-sub-title">Skills</span>
+                        Next.js 15, React 18, TypeScript 5, TanStack Query 5,
+                        Zustand 4, Axios, Tailwind CSS, Radix UI, ESLint 9,
+                        Husky
+                    </p>
                     <ul>
                         <li>
-                            <span class="project-sub-title"
-                                >인터랙션 성능 최적화 (사이드바 리사이징)</span
+                            <strong>[인터랙션 성능]</strong>
+                            레이아웃 사이드바를 마우스·키보드로 리사이징할 때
+                            고빈도 이벤트로 인해 프레임 드랍이 과도하게 발생하고
+                            버벅임이 느껴지던 문제 &rarr;
+                            <code>requestAnimationFrame</code> 기반 리사이즈
+                            스케줄링과 이벤트 제어로 메인 스레드 부하를 분산
+                            &rarr; 프레임 드랍 <strong>80% 이상 개선</strong>,
+                            DevTools 기준 <strong>INP 86ms</strong> 수준으로
+                            안정화하여 리사이즈 UX를 부드럽게 개선
+                            <br />
+                            <a
+                                href="https://myblog-navy-kappa.vercel.app/posts/142"
+                                target="_blank"
+                                rel="noopener noreferrer"
                             >
-                            <ul>
-                                <li>
-                                    고빈도 이벤트를
-                                    <code>requestAnimationFrame</code>으로
-                                    제어하여 메인 스레드 부하를 분산
-                                </li>
-                                <li>
-                                    프레임 유실(Jank)
-                                    <strong>80% 이상 개선</strong>,
-                                    <strong>INP 86ms</strong> 안정화(DevTools
-                                    Performance 기반 검증)
-                                </li>
-                                <li>
-                                    접근성 개선: 리사이즈 핸들에
-                                    <code>role="separator"</code>,
-                                    <code>aria-*</code> 적용 및 키보드 조작 지원
-                                </li>
-                                <li>
-                                    참고 문서:
-                                    <a
-                                        href="https://myblog-navy-kappa.vercel.app/posts/142"
-                                        target="_blank"
-                                        >AppSidebar WAI-ARIA &amp; rAF 최적화</a
-                                    >
-                                </li>
-                            </ul>
+                                AppSidebar WAI-ARIA &amp; rAF 최적화</a
+                            >
                         </li>
                         <li>
-                            <span class="project-sub-title"
-                                >상태/캐싱 전략 설계 (TanStack Query +
-                                Zustand)</span
+                            <strong>[상태/캐싱]</strong>
+                            댓글/증거 리스트 조회 시, 동일한 시나리오 조합이라도
+                            객체 내 배열 정령을 고려하지 않아 서로 다른 쿼리
+                            키로 인식되며 최대
+                            <strong>4~5회까지 API가 재호출</strong>되던 문제
+                            &rarr; 시나리오 토글 상태를 정렬된 집합 기반으로
+                            리팩터링하고 TanStack Query 쿼리 키를 재설계하는
+                            방안을 주도적으로 제안·적용 &rarr; 동일 시나리오
+                            조합에 대해 최초
+                            <strong>1회 호출 후</strong> 데이터가 stale 상태가
+                            되기 전까지 <strong>0회 추가 호출</strong>로 캐시를
+                            재사용하며 불필요한 API 호출 제거
+                            <br />
+                            <a
+                                href="https://myblog-navy-kappa.vercel.app/posts/144"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >TanStack Query 캐시 키 안정화로 댓글·증거 조회
+                                성능 개선하기</a
                             >
-                            <ul>
-                                <li>
-                                    서버 상태와 UI 상태를 분리하고, 클라이언트
-                                    상태에 따라 쿼리 키를 설계해 불필요한 API
-                                    호출 최소화
-                                </li>
-                                <li>
-                                    <code>useMutation</code>과 캐시 무효화를
-                                    활용해 서버 상태 동기화 및 UI 업데이트
-                                    흐름을 안정적으로 구성
-                                </li>
-                                <li>
-                                    시나리오 토글 스토어의 선택 상태를 정렬 기반
-                                    집합으로 리팩터링해 TanStack Query 쿼리 키를
-                                    안정화하여, 같은 시나리오 집합에 대해 캐시
-                                    재사용률을 높여 불필요한 API 호출을 줄임
-                                </li>
-                                <li>
-                                    참고 문서:
-                                    <a
-                                        href="https://myblog-navy-kappa.vercel.app/posts/144"
-                                        target="_blank"
-                                        >TanStack Query 캐시 키 안정화로
-                                        댓글·증거 조회 성능 개선하기</a
-                                    >
-                                </li>
-                            </ul>
                         </li>
                         <li>
-                            <span class="project-sub-title"
-                                >JWT 인증 안정화: Refresh 중복 호출 방지</span
+                            <strong>[인증]</strong>
+                            토큰 만료 시 보호 라우트 세션 검증과 401 인터셉터가
+                            동시에 동작하면서 Refresh 토큰 요청이
+                            <strong>최대 10회 이상 중복</strong>으로 발생하고,
+                            레이스 컨디션에 따라 세션이 끊기거나 상태가 꼬일 수
+                            있던 문제 &rarr; <code>refreshViewer</code>에
+                            <strong>Singleton Promise</strong> 패턴을 도입해
+                            refresh 호출을 항상 1회로 단일화하고 401 응답은
+                            <strong>failedQueue</strong>에 적재 후 새 토큰으로
+                            일괄 재시도하는 인터셉터 큐 패턴을 설계·구현 &rarr;
+                            중복 Refresh 호출을
+                            <strong>10회 &rarr; 1회</strong>로 축소하고 인증
+                            흐름을 안정화
+                            <br />
+                            <a
+                                href="https://myblog-navy-kappa.vercel.app/posts/145"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >Signleton Promise 기반 JWT 유저 인증 기능
+                                구현</a
                             >
-                            <ul>
-                                <li>
-                                    보호 라우트 세션 검증과 401 인터셉터가
-                                    경쟁적으로 발생 시
-                                    <strong>Refresh queue</strong>와
-                                    <strong>Singleton Promise</strong> 패턴으로
-                                    호출 단일화
-                                </li>
-                                <li>
-                                    참고 문서:
-                                    <a
-                                        href="https://myblog-navy-kappa.vercel.app/posts/143"
-                                        target="_blank"
-                                        >Singleton Promise 기반 JWT Refresh</a
-                                    >
-                                </li>
-                            </ul>
                         </li>
                         <li>
-                            <span class="project-sub-title"
-                                >구조/협업 품질</span
+                            시맨틱 마크업과 사이드바 리사이즈 핸들에
+                            <code>role="separator"</code>, <code>aria-*</code>,
+                            키보드 조작을 적용해 접근성을 고려한 레이아웃 구성
+                        </li>
+                        <li>
+                            Next.js App Router 위에
+                            <code
+                                >app / views / widgets / features / entities /
+                                shared</code
                             >
-                            <ul>
-                                <li>
-                                    FSD 패턴 적용으로 디렉토리 구조 통일,
-                                    ESLint/Husky로 컨벤션 자동화 및 협업 비용
-                                    절감
-                                </li>
-                            </ul>
+                            FSD 구조를 적용하고 ESLint FSD 규칙으로 레이어 간
+                            의존성을 제한해 구조 일관성 유지
+                        </li>
+                        <li>
+                            전역 <code>QueryClient</code>에
+                            <code>staleTime</code> 5분,
+                            <code>gcTime</code> 10분, 재시도 1회, 윈도우 포커스
+                            refetch 비활성화 기본값을 설정해 서비스 전반에
+                            통일된 캐싱·재시도 정책 적용
+                        </li>
+                        <li>
+                            <code>Providers</code>에서
+                            <code>QueryClientProvider</code>,
+                            <code>NuqsAdapter</code>, Axios 인증 인터셉터
+                            초기화, 토스트, React Query Devtools를 한 번에
+                            구성해 라우팅·상태·URL 쿼리·피드백 환경을 중앙에서
+                            관리하고, ESLint/Prettier/Husky/lint-staged로 커밋
+                            시 자동 린트·포맷 검사를 수행하며 코드 스타일과
+                            품질을 관리
                         </li>
                     </ul>
                 </div>
