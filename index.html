@@ -15,6 +15,16 @@
             rel="stylesheet"
         />
         <style>
+            /* 인쇄 시 여백 설정 */
+            @media print {
+                @page {
+                    size: A3;
+                    margin-bottom: 20mm;
+                }
+                body {
+                    margin: 0;
+                }
+            }
             /* 기본 설정 */
             body {
                 font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
@@ -22,8 +32,9 @@
                 background-color: #ffffff;
                 line-height: 1.6;
                 margin: 0 auto;
+                padding-block: 20mm;
                 max-width: 210mm; /* A4 width */
-                padding: 25mm; /* A4 margins */
+                padding-inline: 25mm; /* A4 margins */
                 box-sizing: border-box;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
