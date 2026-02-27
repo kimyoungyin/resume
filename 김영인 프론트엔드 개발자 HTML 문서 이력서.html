@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="ko" data-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>이력서_김영인</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin=""
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            /* 기본 설정 */
+            body {
+                font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
+                color: #333333;
+                background-color: #ffffff;
+                line-height: 1.6;
+                margin: 0 auto;
+                max-width: 210mm; /* A4 width */
+                padding: 25mm; /* A4 margins */
+                box-sizing: border-box;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            /* 타이포그래피 */
+            h1 {
+                font-size: 26pt;
+                font-weight: 700;
+                margin: 0 0 5px 0;
+                color: #111;
+                letter-spacing: -0.5px;
+            }
+
+            h2 {
+                font-size: 13pt;
+                font-weight: 700;
+                color: #2563eb; /* 절제된 파란색 포인트 */
+                border-bottom: 2px solid #2563eb;
+                padding-bottom: 6px;
+                margin-top: 35px;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            h3 {
+                font-size: 12pt;
+                font-weight: 700;
+                margin: 20px 0 5px 0;
+                color: #000;
+            }
+
+            p {
+                margin: 0 0 10px 0;
+                font-size: 10.5pt;
+                text-align: justify;
+                word-break: keep-all;
+            }
+
+            a {
+                color: #2563eb;
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            /* 헤더 섹션 */
+            .header {
+                margin-bottom: 30px;
+            }
+
+            .role {
+                font-size: 14pt;
+                color: #555;
+                font-weight: 500;
+                margin-bottom: 15px;
+            }
+
+            .contact-info {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                font-size: 10pt;
+                color: #444;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .contact-info li {
+                display: flex;
+                align-items: center;
+            }
+
+            .contact-info li::after {
+                content: "|";
+                margin-left: 15px;
+                color: #ddd;
+            }
+
+            .contact-info li:last-child::after {
+                display: none;
+            }
+
+            /* Summary & Core Strengths */
+            .summary-text strong {
+                background-color: rgba(37, 99, 235, 0.05);
+                color: #1d4ed8;
+                padding: 0 2px;
+            }
+
+            ul {
+                padding-left: 20px;
+                margin: 5px 0 15px 0;
+            }
+
+            li {
+                font-size: 10.5pt;
+                margin-bottom: 4px;
+            }
+
+            /* Skills */
+            .skills-grid {
+                display: grid;
+                grid-template-columns: 140px 1fr;
+                gap: 8px 10px;
+                font-size: 10.5pt;
+            }
+
+            .skill-category {
+                font-weight: 700;
+                color: #444;
+            }
+
+            /* Project 섹션 */
+            .project-item {
+                margin-bottom: 30px;
+                padding: 0;
+                border: none;
+                background: none;
+            }
+
+            .project-item + .project-item {
+                margin-top: 28px;
+                padding-top: 16px;
+                border-top: 2px solid #e5e7eb;
+            }
+
+            .project-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                flex-wrap: wrap;
+                border-bottom: 1px solid #e5e7eb;
+                padding-bottom: 6px;
+                margin-bottom: 12px;
+            }
+
+            .project-title {
+                font-size: 12pt;
+                font-weight: 700;
+                color: #000;
+            }
+
+            .project-links a {
+                font-size: 9pt;
+                color: #2563eb;
+            }
+
+            .project-meta {
+                font-size: 9.5pt;
+                color: #666;
+                margin-bottom: 8px;
+                font-family: "Noto Sans KR", sans-serif;
+            }
+
+            .project-desc {
+                font-style: italic;
+                color: #555;
+                margin-bottom: 12px;
+                font-size: 10pt;
+            }
+
+            .project-details ul {
+                list-style-type: disc;
+            }
+
+            .project-details ul ul {
+                list-style-type: circle;
+                margin-top: 3px;
+                margin-bottom: 8px;
+                color: #555;
+                font-size: 10pt;
+            }
+
+            .project-sub-title {
+                font-weight: 700;
+                display: block;
+                margin-bottom: 2px;
+                color: #333;
+            }
+
+            /* Education */
+            .education-item {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 5px;
+                font-size: 10.5pt;
+            }
+
+            .edu-school {
+                font-weight: 700;
+            }
+
+            .edu-period {
+                color: #666;
+            }
+
+            /* 기타 */
+            .divider {
+                margin: 0 5px;
+                color: #ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 헤더 -->
+        <header class="header">
+            <h1>김영인</h1>
+            <div class="role">프론트엔드 개발자</div>
+            <ul class="contact-info">
+                <li>
+                    Email:
+                    <a
+                        href="/cdn-cgi/l/email-protection#532a3a3d626a6a6b666a13343e323a3f7d303c3e"
+                        ><span
+                            class="__cf_email__"
+                            data-cfemail="c3baaaadf2fafafbf6fa83a4aea2aaafeda0acae"
+                            >[email&#160;protected]</span
+                        ></a
+                    >
+                </li>
+                <li>
+                    GitHub:
+                    <a href="https://github.com/kimyoungyin" target="_blank"
+                        >github.com/kimyoungyin</a
+                    >
+                </li>
+                <li>Location: 서울 강동구</li>
+            </ul>
+        </header>
+
+        <!-- Summary -->
+        <section>
+            <h2>Summary</h2>
+            <p class="summary-text">
+                단순 구현에 그치지 않고
+                <strong>정량적 성능 지표</strong>(Lighthouse / Chrome DevTools /
+                Web Vitals)를 기반으로 UI/UX를 개선하는 프론트엔드
+                개발자입니다.<br />
+                인터랙션 성능(드래그/리사이징)에서는
+                <code>requestAnimationFrame</code> 기반 스케줄링으로
+                <strong>프레임 드랍 80%+ 개선</strong>,
+                <strong>INP 86ms</strong> 안정화를 경험했습니다. 또한 검색 결과
+                리스트/이미지 기반 상세 페이지에서 로딩 전략을 최적화해
+                <strong>LCP 0.5s</strong>,
+                <strong>Lighthouse Performance 100점</strong> 수준의 체감 성능을
+                달성한 경험이 있습니다.
+            </p>
+        </section>
+
+        <!-- Core Strengths -->
+        <section>
+            <h2>Core Strengths</h2>
+            <ul>
+                <li>
+                    Lighthouse / DevTools / Web Vitals 같은 지표와 개발자 도구를
+                    참고해 성능 개선 포인트를 찾고, 개선 효과를 확인합니다.
+                </li>
+                <li>
+                    App Router 기반 Next.js 구조화(FSD), 캐싱/상태 전략(TanStack
+                    Query·Zustand)
+                </li>
+                <li>
+                    인증 안정성(JWT refresh 중복 호출 방지: Singleton
+                    Promise/Queue)
+                </li>
+                <li>
+                    접근성(WAI-ARIA) 고려 및 협업 컨벤션(ESLint/Husky, PR 전략)
+                    정리
+                </li>
+            </ul>
+        </section>
+
+        <!-- Skills -->
+        <section>
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">Languages</div>
+                <div>TypeScript, JavaScript(ES6+)</div>
+
+                <div class="skill-category">Frontend</div>
+                <div>React, Next.js(App Router), HTML5, CSS3</div>
+
+                <div class="skill-category">Styling</div>
+                <div>Tailwind CSS</div>
+
+                <div class="skill-category">Data/State</div>
+                <div>
+                    TanStack Query(React Query), Zustand (Redux Toolkit 경험
+                    있음)
+                </div>
+
+                <div class="skill-category">Backend/DB</div>
+                <div>Supabase(PostgreSQL), MySQL (프로젝트 경험)</div>
+
+                <div class="skill-category">DevOps/Tools</div>
+                <div>Git, GitHub, Vercel, AWS(S3)</div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section>
+            <h2>Projects</h2>
+
+            <!-- Project 1 -->
+            <div class="project-item">
+                <div class="project-header">
+                    <span class="project-title">Harvesters-LALA</span>
+                    <span class="project-links">
+                        <a
+                            href="https://lala-test.replit.app/projects?worker=e46bde1b-3d2e-47c8-8a5a-19f7bd957aaa"
+                            target="_blank"
+                            >Service Link</a
+                        >
+                    </span>
+                </div>
+                <div class="project-meta">
+                    2026.01 ~ 진행중 <span class="divider">|</span> 팀
+                    프로젝트(6명)
+                    <span class="divider">|</span> 프론트엔드(인증, 시나리오 UI,
+                    레이아웃 구조 설계)
+                </div>
+                <div class="project-desc">
+                    댓글 수집 및 AI 분석 기반으로, 사용자의 추가 관여 없이
+                    '평판'을 관리하는 B2B 서비스
+                </div>
+                <div class="project-details">
+                    <ul>
+                        <li>
+                            <span class="project-sub-title"
+                                >인터랙션 성능 최적화 (사이드바 리사이징)</span
+                            >
+                            <ul>
+                                <li>
+                                    고빈도 이벤트를
+                                    <code>requestAnimationFrame</code>으로
+                                    제어하여 메인 스레드 부하를 분산
+                                </li>
+                                <li>
+                                    프레임 유실(Jank)
+                                    <strong>80% 이상 개선</strong>,
+                                    <strong>INP 86ms</strong> 안정화(DevTools
+                                    Performance 기반 검증)
+                                </li>
+                                <li>
+                                    접근성 개선: 리사이즈 핸들에
+                                    <code>role="separator"</code>,
+                                    <code>aria-*</code> 적용 및 키보드 조작 지원
+                                </li>
+                                <li>
+                                    참고 문서:
+                                    <a
+                                        href="https://myblog-navy-kappa.vercel.app/posts/142"
+                                        target="_blank"
+                                        >AppSidebar WAI-ARIA &amp; rAF 최적화</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="project-sub-title"
+                                >상태/캐싱 전략 설계 (TanStack Query +
+                                Zustand)</span
+                            >
+                            <ul>
+                                <li>
+                                    서버 상태와 UI 상태를 분리하고, 클라이언트
+                                    상태에 따라 쿼리 키를 설계해 불필요한 API
+                                    호출 최소화
+                                </li>
+                                <li>
+                                    <code>useMutation</code>과 캐시 무효화를
+                                    활용해 서버 상태 동기화 및 UI 업데이트
+                                    흐름을 안정적으로 구성
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="project-sub-title"
+                                >JWT 인증 안정화: Refresh 중복 호출 방지</span
+                            >
+                            <ul>
+                                <li>
+                                    보호 라우트 세션 검증과 401 인터셉터가
+                                    경쟁적으로 발생 시
+                                    <strong>Singleton Promise</strong> 패턴으로
+                                    호출 단일화
+                                </li>
+                                <li>
+                                    참고 문서:
+                                    <a
+                                        href="https://myblog-navy-kappa.vercel.app/posts/143"
+                                        target="_blank"
+                                        >Singleton Promise 기반 JWT Refresh</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="project-sub-title"
+                                >구조/협업 품질</span
+                            >
+                            <ul>
+                                <li>
+                                    FSD 패턴 적용으로 디렉토리 구조 통일,
+                                    ESLint/Husky로 컨벤션 자동화 및 협업 비용
+                                    절감
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-item">
+                <div class="project-header">
+                    <span class="project-title"
+                        >Myblog — 기술 블로그 플랫폼</span
+                    >
+                    <span class="project-links">
+                        <a
+                            href="https://myblog-navy-kappa.vercel.app"
+                            target="_blank"
+                            >Service Link</a
+                        >
+                        <span class="divider">|</span>
+                        <a
+                            href="https://github.com/kimyoungyin/myblog"
+                            target="_blank"
+                            >GitHub</a
+                        >
+                    </span>
+                </div>
+                <div class="project-meta">
+                    2025.08 ~ 2025.09 <span class="divider">|</span> 개인
+                    프로젝트(100%) <span class="divider">|</span> Next.js,
+                    TypeScript, Supabase
+                </div>
+                <div class="project-desc">
+                    "다른 사람은 읽을 수 있지만, 업로드는 나만 가능한" 개인
+                    블로그 플랫폼 구축
+                </div>
+                <div class="project-details">
+                    <ul>
+                        <li>
+                            <span class="project-sub-title">성능 최적화</span>
+                            <ul>
+                                <li>
+                                    Skeleton UI + TanStack Query 캐싱 전략으로
+                                    초기 로딩 체감 개선
+                                </li>
+                                <li>
+                                    Lighthouse Performance
+                                    <strong>99점</strong>, LCP
+                                    <strong>0.5s</strong> 수준의 로딩 성능 달성
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="project-sub-title">SEO 품질 확보</span>
+                            <ul>
+                                <li>
+                                    시맨틱 태그 및 메타데이터 최적화로
+                                    Lighthouse SEO 100점 확보 및 검색 엔진 노출
+                                    고려 설계
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="project-sub-title"
+                                >검색/필터링 UX 및 권한 제어</span
+                            >
+                            <ul>
+                                <li>
+                                    <code>URLSearchParams</code> 기반 필터 상태
+                                    관리 및 해시태그 필터링/정렬 인덱싱 구현
+                                </li>
+                                <li>
+                                    Admin 권한에 따라 UI 접근을 제어하고
+                                    Zustand를 활용해 전역 상태 관리
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-item">
+                <div class="project-header">
+                    <span class="project-title"
+                        >승룡이네집 도서 검색 시스템</span
+                    >
+                    <span class="project-links">
+                        <a href="https://seongryung.vercel.app/" target="_blank"
+                            >Service Link</a
+                        >
+                        <span class="divider">|</span>
+                        <a
+                            href="https://github.com/kimyoungyin/seongryung"
+                            target="_blank"
+                            >GitHub</a
+                        >
+                    </span>
+                </div>
+                <div class="project-meta">
+                    2025.03 ~ 2025.04 <span class="divider">|</span> 개인
+                    프로젝트(100%) <span class="divider">|</span> Next.js,
+                    MySQL, AWS S3
+                </div>
+                <div class="project-desc">
+                    군 복무 중 도서 검색 시스템 부재 문제를 해결하기 위해 개발한
+                    도서 위치 안내 서비스
+                </div>
+                <div class="project-details">
+                    <ul>
+                        <li>
+                            <span class="project-sub-title"
+                                >핵심 사용자 가치: 검색 → 위치 안내</span
+                            >
+                            <ul>
+                                <li>
+                                    도서명 검색 결과 제공 및 책 위치가 표시된
+                                    도식도 이미지 안내로 탐색 시간 단축
+                                </li>
+                                <li>
+                                    수기/분산 관리되던 데이터를 디지털화해 업무
+                                    및 탐색 흐름 개선
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="project-sub-title"
+                                >로딩/렌더링 최적화 (정량 지표 기반)</span
+                            >
+                            <ul>
+                                <li>
+                                    Next/Image 최적화 및 Lazy Loading 적용 (검색
+                                    리스트, 도식도 페이지)
+                                </li>
+                                <li>
+                                    Lighthouse Performance
+                                    <strong>100점</strong>, LCP
+                                    <strong>0.5s</strong>, Speed Index
+                                    <strong>0.9s</strong> 달성
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="project-sub-title">UX 개선</span>
+                            <ul>
+                                <li>
+                                    Intercepting Route 기반 모달을 활용해 페이지
+                                    이동 없이 상세 정보 확인, 이탈 방지
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section>
+            <h2>Education</h2>
+            <div class="education-item">
+                <span class="edu-school"
+                    >동국대학교(서울) 식품생명공학과 졸업</span
+                >
+                <span class="edu-period">2018.02 ~ 2023.07</span>
+            </div>
+        </section>
+
+        <script
+            data-cfasync="false"
+            src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+        ></script>
+    </body>
+</html>
