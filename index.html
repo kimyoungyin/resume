@@ -289,8 +289,10 @@
                     참고해 성능 개선 포인트를 찾고, 개선 효과를 확인합니다.
                 </li>
                 <li>
-                    App Router 기반 Next.js 구조화(FSD), 캐싱/상태 전략(TanStack
-                    Query·Zustand)
+                    App Router 기반 Next.js 구조화(FSD),
+                    <strong>SSR prefetch + Hydration</strong>을 활용한 캐싱
+                    전략(TanStack Query) 및 클라이언트 상태(Zustand) 분리, 쿼리
+                    키·QueryClient 구조화
                 </li>
                 <li>
                     인증 안정성(JWT refresh 중복 호출 방지: Singleton
@@ -487,6 +489,12 @@
                                     <strong>99점</strong>, LCP
                                     <strong>0.5s</strong> 수준의 로딩 성능 달성
                                 </li>
+                                <li>
+                                    TanStack Query
+                                    <strong>SSR prefetch + Hydration</strong>
+                                    패턴으로 초기 로딩과 캐시 일관성을
+                                    확보했습니다.
+                                </li>
                             </ul>
                         </li>
                         <li>
@@ -511,6 +519,22 @@
                                 <li>
                                     Admin 권한에 따라 UI 접근을 제어하고
                                     Zustand를 활용해 전역 상태 관리
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="project-sub-title"
+                                >서버·클라이언트 상태/캐시 구조 정리</span
+                            >
+                            <ul>
+                                <li>
+                                    클라이언트는 동일 인스턴스(Singleton), 서버는
+                                    요청마다 새 인스턴스(cache()로 요청 범위 내
+                                    재사용)를 사용하는 getQueryClient 구성과,
+                                    <strong>쿼리 키 팩토리</strong>(posts / auth
+                                    / search)로 prefetch·useQuery·invalidate 시
+                                    키를 통일해 캐시 일관성과 유지보수성을
+                                    높였습니다.
                                 </li>
                             </ul>
                         </li>
