@@ -86,12 +86,15 @@
             }
 
             a {
-                color: #2563eb;
-                text-decoration: none;
+                color: #444;
+                text-decoration: underline;
+                text-underline-offset: 2px;
+                text-decoration-color: rgba(0, 0, 0, 0.2);
             }
 
             a:hover {
-                text-decoration: underline;
+                color: #1d4ed8;
+                text-decoration-color: #1d4ed8;
             }
 
             /* 헤더 섹션 */
@@ -125,14 +128,22 @@
             }
 
             .contact-info li > a {
-                margin-left: 4px;
                 word-break: break-all;
+                color: inherit;
+                text-decoration-color: rgba(0, 0, 0, 0.25);
+            }
+
+            .contact-info li > a:hover {
+                color: #1d4ed8;
+                text-decoration-color: #1d4ed8;
             }
 
             .contact-info li::after {
-                content: "|";
-                margin-left: 16px;
-                color: #ddd;
+                content: "·";
+                margin-left: 14px;
+                margin-right: 2px;
+                color: #c4c4c4;
+                font-weight: 700;
                 flex-shrink: 0;
             }
 
@@ -218,7 +229,13 @@
 
             .project-links a {
                 font-size: 9pt;
-                color: #2563eb;
+                color: #444;
+                text-decoration-color: rgba(0, 0, 0, 0.2);
+            }
+
+            .project-links a:hover {
+                color: #1d4ed8;
+                text-decoration-color: #1d4ed8;
             }
 
             .project-link-private {
@@ -327,9 +344,9 @@
             </div>
             <ul class="contact-info">
                 <li>
-                    Email:
                     <a
                         href="/cdn-cgi/l/email-protection#532a3a3d626a6a6b666a13343e323a3f7d303c3e"
+                        aria-label="Email"
                         ><span
                             class="__cf_email__"
                             data-cfemail="c3baaaadf2fafafbf6fa83a4aea2aaafeda0acae"
@@ -338,12 +355,14 @@
                     >
                 </li>
                 <li>
-                    GitHub:
-                    <a href="https://github.com/kimyoungyin" target="_blank"
-                        >github.com/kimyoungyin</a
+                    <a
+                        href="https://github.com/kimyoungyin"
+                        target="_blank"
+                        aria-label="GitHub"
+                        >https://github.com/kimyoungyin</a
                     >
                 </li>
-                <li>Location: 서울 강동구</li>
+                <li>서울 강동구</li>
             </ul>
         </header>
 
