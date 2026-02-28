@@ -19,10 +19,20 @@
             @media print {
                 @page {
                     size: A4;
-                    /* margin-bottom: 20mm; */
                 }
                 body {
                     margin: 0;
+                }
+                .header {
+                    break-after: avoid;
+                    margin-bottom: 20px;
+                }
+                .contact-info {
+                    gap: 12px;
+                    flex-wrap: wrap;
+                }
+                .contact-info li::after {
+                    color: #bbb;
                 }
             }
             /* 기본 설정 */
@@ -99,27 +109,31 @@
             .contact-info {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 15px;
+                gap: 12px 16px;
                 font-size: 10pt;
                 color: #444;
                 list-style: none;
                 padding: 0;
                 margin: 0;
+                align-items: center;
             }
 
             .contact-info li {
                 display: flex;
                 align-items: center;
+                flex-shrink: 0;
             }
 
             .contact-info li > a {
                 margin-left: 4px;
+                word-break: break-all;
             }
 
             .contact-info li::after {
                 content: "|";
-                margin-left: 15px;
+                margin-left: 16px;
                 color: #ddd;
+                flex-shrink: 0;
             }
 
             .contact-info li:last-child::after {
@@ -131,6 +145,22 @@
                 background-color: rgba(37, 99, 235, 0.05);
                 color: #1d4ed8;
                 padding: 0 2px;
+            }
+
+            /* Summary 넘버링: strong과 구분, 테마 내 회색 톤 */
+            .summary-text .summary-num {
+                font-weight: 700;
+                background: none;
+                padding: 0;
+            }
+
+            .summary-text .summary-item {
+                display: block;
+                margin-bottom: 0.5em;
+            }
+
+            .summary-text .summary-item:last-child {
+                margin-bottom: 0;
             }
 
             ul {
@@ -189,6 +219,12 @@
             .project-links a {
                 font-size: 9pt;
                 color: #2563eb;
+            }
+
+            .project-link-private {
+                font-size: 9pt;
+                color: #94a3b8;
+                font-style: normal;
             }
 
             .project-meta {
@@ -254,8 +290,30 @@
                     padding-block: 16px;
                 }
 
+                .header {
+                    margin-bottom: 24px;
+                }
+
                 .contact-info {
-                    justify-content: center;
+                    gap: 10px 14px;
+                    font-size: 9.5pt;
+                    justify-content: flex-start;
+                }
+
+                .contact-info li::after {
+                    margin-left: 12px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .contact-info {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 6px;
+                }
+
+                .contact-info li::after {
+                    display: none;
                 }
             }
         </style>
@@ -293,48 +351,36 @@
         <section>
             <h2>Summary</h2>
             <p class="summary-text">
-                단순 구현에 그치지 않고
-                <strong>정량적 성능 지표</strong>(Lighthouse / Chrome DevTools /
-                Web Vitals)를 기반으로 UI/UX를 개선하는 프론트엔드
-                개발자입니다.<br />
-                인터랙션 성능(드래그/리사이징)에서는
-                <code>requestAnimationFrame</code> 기반 스케줄링으로
-                <strong>프레임 드랍 80%+ 개선</strong>,
-                <strong>INP 86ms</strong> 안정화를 경험했습니다. 또한 검색 결과
-                리스트/이미지 기반 상세 페이지에서 로딩 전략을 최적화해
-                <strong>LCP 0.5s</strong>,
-                <strong>Lighthouse Performance 100점</strong> 수준의 체감 성능을
-                달성한 경험이 있습니다.
+                <span class="summary-item">
+                    <span class="summary-num">1.</span> 정량 지표와 도메인
+                    문제를 바탕으로 <strong>성능·데이터 흐름·보안 UX</strong>를
+                    함께 설계하는 프론트엔드 개발자입니다.
+                </span>
+                <span class="summary-item">
+                    <span class="summary-num">2.</span> 인터랙션 성능 최적화로
+                    <strong>프레임 드랍 80% 개선 및 INP 86ms</strong>를
+                    달성했으며, 서버 사이드 프리페칭과 이미지 최적화를 통해
+                    <strong>LCP 0.5s, Lighthouse 100점</strong>의 사용자 경험을
+                    구축한 경험이 있습니다.
+                </span>
+                <span class="summary-item">
+                    <span class="summary-num">3.</span> 토큰 갱신 시 발생하는
+                    동시 401 에러를
+                    <strong>Singleton Promise와 재시도 큐</strong>로 해결해 인증
+                    흐름을 안정화했으며, 보안 리스크를 고려한
+                    <strong>HttpOnly 쿠키 방식 전환</strong>을 제안해 시스템
+                    보안성을 높인 경험이 있습니다.
+                </span>
+                <span class="summary-item">
+                    <span class="summary-num">4.</span> 도메인별
+                    <strong
+                        >DTO 불일치 문제를 Swagger/노션 문서화로 체계화</strong
+                    >하여 협업 비용을 낮추고,
+                    <strong>FSD 구조와 ESLint/Husky 자동화</strong>를 도입해
+                    팀의 코드 품질과 정합성을 유지하는 데 기여한 경험이
+                    있습니다.
+                </span>
             </p>
-        </section>
-
-        <!-- Core Strengths -->
-        <section>
-            <h2>Core Strengths</h2>
-            <ul>
-                <li>
-                    Lighthouse / DevTools / Web Vitals 같은 지표와 트레이스를
-                    바탕으로 병목을 찾고, rAF·이미지 최적화·로딩 전략 조정
-                    등으로 INP·LCP·Speed Index를 개선
-                </li>
-                <li>
-                    App Router 기반 Next.js 구조화(FSD)와 TanStack Query를
-                    중심으로, SSR prefetch + Hydration, QueryClient 패턴과 쿼리
-                    키 안정화로 서버·클라이언트 데이터 흐름과 캐싱 전략을 설계
-                </li>
-                <li>
-                    JWT Refresh Singleton Promise/Queue, Supabase Auth +
-                    Middleware + Server Actions + Zustand 조합 등으로 인증/세션
-                    경쟁 상태를 제어하고, 보호 라우트와 권한 체크를 이중으로
-                    구성
-                </li>
-                <li>
-                    실제 사용자 시나리오와 도메인 문제에 맞는 화면
-                    전환·검색/필터 UX를 설계하고, Intercepting/Parallel Route,
-                    FSD 구조·ESLint/Husky·코드 리뷰를 통해 팀/프로젝트 품질을
-                    정리
-                </li>
-            </ul>
         </section>
 
         <!-- Skills -->
@@ -354,7 +400,7 @@
                 <div>TanStack Query(React Query), Zustand, Redux Toolkit</div>
 
                 <div class="skill-category">Backend/DB</div>
-                <div>Supabase(PostgreSQL), MySQL (프로젝트 경험)</div>
+                <div>Supabase(PostgreSQL), MySQL</div>
 
                 <div class="skill-category">DevOps/Tools</div>
                 <div>Git, GitHub, Vercel, AWS(S3)</div>
@@ -372,6 +418,10 @@
                     <span class="project-links">
                         <a href="https://lala.harvester.kr" target="_blank"
                             >Service Link</a
+                        >
+                        <span class="divider">|</span>
+                        <span class="project-link-private"
+                            >Private Repo (공개 예정)</span
                         >
                     </span>
                 </div>
@@ -395,67 +445,52 @@
                     <ul>
                         <li>
                             <strong>[인터랙션 성능]</strong>
-                            레이아웃 사이드바를 마우스·키보드로 리사이징할 때
-                            고빈도 이벤트로 인해 프레임 드랍이 과도하게 발생하고
-                            버벅임이 느껴지던 문제 &rarr;
-                            <code>requestAnimationFrame</code> 기반 리사이즈
-                            스케줄링과 이벤트 제어로 메인 스레드 부하를 분산
-                            &rarr; 프레임 드랍 <strong>80% 이상 개선</strong>,
-                            DevTools 기준 <strong>INP 86ms</strong> 수준으로
-                            안정화하여 리사이즈 UX를 부드럽게 개선
+                            사이드바 리사이징 시 프레임 드랍이 심해
+                            <code>requestAnimationFrame</code> 기반 스케줄링을
+                            적용하여 프레임 드랍 80% 이상 개선, INP 86ms
+                            수준으로 안정화
                             <br />
                             <a
                                 href="https://myblog-navy-kappa.vercel.app/posts/142"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                AppSidebar WAI-ARIA &amp; rAF 최적화</a
+                                기술 블로그: AppSidebar WAI-ARIA &amp; rAF
+                                최적화</a
                             >
                         </li>
                         <li>
                             <strong>[상태/캐싱]</strong>
-                            댓글/증거 리스트 조회 시, 동일한 시나리오 조합이라도
-                            객체 내 배열 정령을 고려하지 않아 서로 다른 쿼리
-                            키로 인식되며 최대
-                            <strong>4~5회까지 API가 재호출</strong>되던 문제
-                            &rarr; 시나리오 토글 상태를 정렬된 집합 기반으로
-                            리팩터링하고 TanStack Query 쿼리 키를 재설계하는
-                            방안을 주도적으로 제안·적용 &rarr; 동일 시나리오
-                            조합에 대해 최초
-                            <strong>1회 호출 후</strong> 데이터가 stale 상태가
-                            되기 전까지 <strong>0회 추가 호출</strong>로 캐시를
-                            재사용하며 불필요한 API 호출 제거
+                            댓글·증거 리스트 조회 시 동일 시나리오에서 API가
+                            4~5회 중복 호출되던 문제를 TanStack Query 쿼리 키
+                            재설계로 1회 호출 후 캐시 재사용하도록 개선
                             <br />
                             <a
                                 href="https://myblog-navy-kappa.vercel.app/posts/144"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                >TanStack Query 캐시 키 안정화로 댓글·증거 조회
-                                성능 개선하기</a
+                                >기술 블로그: TanStack Query 캐시 키 안정화로
+                                댓글·증거 조회 성능 개선하기</a
                             >
                         </li>
                         <li>
                             <strong>[인증]</strong>
-                            토큰 만료 시 보호 라우트 세션 검증과 401 인터셉터가
-                            동시에 동작하면서 Refresh 토큰 요청이
-                            <strong>최대 10회 이상 중복</strong>으로 발생하고,
-                            레이스 컨디션에 따라 세션이 끊기거나 상태가 꼬일 수
-                            있던 문제 &rarr; <code>refreshViewer</code>에
-                            <strong>Singleton Promise</strong> 패턴을 도입해
-                            refresh 호출을 항상 1회로 단일화하고 401 응답은
-                            <strong>failedQueue</strong>에 적재 후 새 토큰으로
-                            일괄 재시도하는 인터셉터 큐 패턴을 설계·구현 &rarr;
-                            중복 Refresh 호출을
-                            <strong>10회 &rarr; 1회</strong>로 축소하고 인증
-                            흐름을 안정화
+                            토큰 만료 시 Refresh 요청이 10회 이상 중복되던
+                            문제를 Singleton Promise와 재시도 큐 도입으로 1회로
+                            단일화하여 인증 흐름 안정화
                             <br />
                             <a
                                 href="https://myblog-navy-kappa.vercel.app/posts/145"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                >Signleton Promise 기반 JWT 유저 인증 기능
-                                구현</a
+                                >기술 블로그: Signleton Promise 기반 JWT 유저
+                                인증 기능 구현</a
                             >
+                        </li>
+                        <li>
+                            <strong>[백엔드 협업]</strong>
+                            도메인별 API 응답 DTO 불일치를 노션 팀 문서에 정리해
+                            통일을 제안하고, Swagger 기반 DTO 보완에 기여
                         </li>
                         <li>
                             시맨틱 마크업과 사이드바 리사이즈 핸들에
@@ -463,30 +498,24 @@
                             키보드 조작을 적용해 접근성을 고려한 레이아웃 구성
                         </li>
                         <li>
-                            Next.js App Router 위에
-                            <code
-                                >app / views / widgets / features / entities /
-                                shared</code
-                            >
-                            FSD 구조를 적용하고 ESLint FSD 규칙으로 레이어 간
-                            의존성을 제한해 구조 일관성 유지
+                            App Router에 FSD 구조 적용, ESLint FSD 규칙으로
+                            레이어 의존성 제한
                         </li>
                         <li>
-                            전역 <code>QueryClient</code>에
-                            <code>staleTime</code> 5분,
-                            <code>gcTime</code> 10분, 재시도 1회, 윈도우 포커스
-                            refetch 비활성화 기본값을 설정해 서비스 전반에
-                            통일된 캐싱·재시도 정책 적용
+                            <code>Providers</code>에서 QueryClient·Nuqs·Axios
+                            인터셉터·토스트 등 초기화
                         </li>
                         <li>
-                            <code>Providers</code>에서
-                            <code>QueryClientProvider</code>,
-                            <code>NuqsAdapter</code>, Axios 인증 인터셉터
-                            초기화, 토스트, React Query Devtools를 한 번에
-                            구성해 라우팅·상태·URL 쿼리·피드백 환경을 중앙에서
-                            관리하고, ESLint/Prettier/Husky/lint-staged로 커밋
-                            시 자동 린트·포맷 검사를 수행하며 코드 스타일과
-                            품질을 관리
+                            README에 네이밍·커밋 컨벤션 문서화,
+                            ESLint/Prettier/lint-staged/Husky로 커밋 전 검사
+                        </li>
+                        <li>
+                            Refresh 토큰 body 전달의 보안 리스크를 지적해 쿠키
+                            방식 전환을 요청해 반영
+                        </li>
+                        <li>
+                            유효 데이터 형식을 프론트·백이 공유한 뒤 각자 검증
+                            로직을 구현
                         </li>
                     </ul>
                 </div>
@@ -512,74 +541,73 @@
                 </div>
                 <div class="project-meta">
                     2025.08 ~ 2025.09 <span class="divider">|</span> 개인
-                    프로젝트(100%) <span class="divider">|</span> Next.js,
-                    TypeScript, Supabase
+                    프로젝트(100%)
+                    <span class="divider">|</span> 기획·설계·구현·배포 전담
                 </div>
                 <div class="project-desc">
-                    "다른 사람은 읽을 수 있지만, 업로드는 나만 가능한" 개인
-                    블로그 플랫폼
+                    "다른 사람은 읽을 수 있지만, 업로드는 나만 가능한" 기술
+                    블로그로, 기존 블로그 플랫폼에서 부족했던 해시태그 기반
+                    분류·검색을 직접 구현해 내가 쓴 글을 위키처럼 빠르게 다시
+                    찾을 수 있도록 설계한 서비스
                 </div>
                 <div class="project-details">
+                    <p>
+                        <span class="project-sub-title">Skills</span>
+                        Next.js 15, React 19, TypeScript 5, TanStack Query 5,
+                        Zustand 5, Supabase (PostgreSQL/Auth/Storage), Tailwind
+                        CSS 4, shadcn/ui, Zod
+                    </p>
                     <ul>
                         <li>
-                            <span class="project-sub-title">성능 최적화</span>
-                            <ul>
-                                <li>
-                                    Skeleton UI + TanStack Query 캐싱 전략으로
-                                    초기 로딩 체감 개선
-                                </li>
-                                <li>
-                                    Lighthouse Performance
-                                    <strong>99점</strong>, LCP
-                                    <strong>0.5s</strong> 수준의 로딩 성능 달성
-                                </li>
-                                <li>
-                                    TanStack Query
-                                    <strong>SSR prefetch + Hydration</strong>
-                                    패턴으로 초기 로딩과 캐시 일관성을 확보함
-                                </li>
-                            </ul>
+                            <strong>[성능]</strong>
+                            글 목록·검색 초기 로딩이 길고 스크롤 시 지연이
+                            체감되던 문제를
+                            <code>useInfiniteQuery</code> 기반 무한 스크롤·서버
+                            prefetch·<code>HydrationBoundary</code> 도입으로
+                            Lighthouse 99점, LCP 약 0.5s 달성
                         </li>
                         <li>
-                            <span class="project-sub-title">SEO 품질 확보</span>
-                            <ul>
-                                <li>
-                                    시맨틱 태그 및 메타데이터 최적화로
-                                    Lighthouse SEO 100점 확보 및 검색 엔진 노출
-                                    고려 설계
-                                </li>
-                            </ul>
+                            <strong>[SEO]</strong>
+                            검색 노출을 위해
+                            <code>metadata</code
+                            >·<code>generateMetadata</code>·<code>sitemap.xml</code>·<code>robots.txt</code>·시맨틱으로
+                            SEO 구조를 정리하여 Lighthouse SEO 100점 달성
                         </li>
                         <li>
-                            <span class="project-sub-title"
-                                >검색/필터링 UX 및 권한 제어</span
-                            >
-                            <ul>
-                                <li>
-                                    <code>URLSearchParams</code> 기반 필터 상태
-                                    관리 및 해시태그 필터링/정렬 인덱싱 구현
-                                </li>
-                                <li>
-                                    Admin 권한에 따라 UI 접근을 제어하고
-                                    Zustand를 활용해 전역 상태 관리
-                                </li>
-                            </ul>
+                            <strong>[검색/필터 UX]</strong>
+                            해시태그·검색어·정렬을 URL과 동기화하고 Supabase
+                            RPC·복합 인덱스로 다중 해시태그 AND 필터를 구현해
+                            뒤로가기·URL 공유 시 검색 맥락 유지
                         </li>
                         <li>
-                            <span class="project-sub-title"
-                                >서버·클라이언트 상태/캐시 구조 정리</span
-                            >
-                            <ul>
-                                <li>
-                                    클라이언트는 동일 인스턴스(Singleton),
-                                    서버는 요청마다 새 인스턴스(cache()로 요청
-                                    범위 내 재사용)를 사용하는 getQueryClient
-                                    구성과,
-                                    <strong>쿼리 키 팩토리</strong>(posts / auth
-                                    / search)로 prefetch·useQuery·invalidate 시
-                                    키를 통일해 캐시 일관성과 유지보수성을 높임
-                                </li>
-                            </ul>
+                            <strong>[권한/보안]</strong>
+                            비로그인 사용자 쓰기/관리 차단을 위에 Supabase
+                            OAuth·RLS·Middleware·Server Actions를 조합해 읽기만
+                            공개, Admin만 글 작성/수정/삭제 가능하도록 구성
+                        </li>
+                        <li>
+                            검색 페이지에 sticky 검색바, 디바운스 해시태그
+                            자동완성·다중 선택,
+                            <code>q</code>/<code>tag</code>/<code>page</code>
+                            URL 동기화
+                        </li>
+                        <li>
+                            마크다운 실시간 미리보기·드래그앤드롭 이미지
+                            업로드·Zod 검증으로 작성 경험·데이터 일관성 확보
+                        </li>
+                        <li>
+                            Tailwind·shadcn/ui 기반 반응형·다크
+                            모드·Skeleton·접근성 고려 UI
+                        </li>
+                        <li>
+                            서버/클라이언트 QueryClient 분리,
+                            <code>queries.ts</code> 쿼리 키 팩토리로
+                            캐시·invalidate 키 통일
+                        </li>
+                        <li>
+                            Supabase 유틸·<code>lib/actions.ts</code> 계층으로
+                            Server Actions·데이터 액세스 분리, 도메인별 로직
+                            모듈화
                         </li>
                     </ul>
                 </div>
@@ -605,55 +633,56 @@
                 </div>
                 <div class="project-meta">
                     2025.03 ~ 2025.04 <span class="divider">|</span> 개인
-                    프로젝트(100%) <span class="divider">|</span> Next.js,
-                    MySQL, AWS S3
+                    프로젝트(100%) <span class="divider">|</span> 프론트엔드
+                    (기획·설계·구현·배포)
                 </div>
                 <div class="project-desc">
-                    군 복무 중 도서 검색 시스템 부재 문제를 해결하기 위해 개발한
-                    도서 위치 안내 서비스
+                    군 복무 중 700~800권 규모 도서에 대한 검색 시스템이 없고,
+                    수기/분산 관리로 자료와 실제 위치가 어긋나던 문제를 해결하기
+                    위해 개발한 도서 위치 안내 서비스
                 </div>
                 <div class="project-details">
+                    <p>
+                        <span class="project-sub-title">Skills</span>
+                        Next.js 15, React 19, TypeScript, Tailwind CSS,
+                        MySQL(AWS RDS), AWS S3, Vercel
+                    </p>
                     <ul>
                         <li>
-                            <span class="project-sub-title"
-                                >핵심 사용자 가치: 검색 → 위치 안내</span
-                            >
-                            <ul>
-                                <li>
-                                    도서명 검색 결과 제공 및 책 위치가 표시된
-                                    도식도 이미지 안내로 탐색 시간 단축
-                                </li>
-                                <li>
-                                    수기/분산 관리되던 데이터를 디지털화해 업무
-                                    및 탐색 흐름 개선
-                                </li>
-                            </ul>
+                            <strong>[도서 검색/위치 안내]</strong>
+                            700~800권 규모에서 검색 부재·수기 관리로 탐색에
+                            5~6분 소요되던 문제를 도서명 검색·책장
+                            도식도(S3)·MySQL(RDS)로 검색·위치 조회를 일원화해
+                            1~2분 내외로 단축
                         </li>
                         <li>
-                            <span class="project-sub-title"
-                                >로딩/렌더링 최적화 (정량 지표 기반)</span
-                            >
-                            <ul>
-                                <li>
-                                    Next/Image 최적화 및 Lazy Loading 적용 (검색
-                                    리스트, 도식도 페이지)
-                                </li>
-                                <li>
-                                    Lighthouse Performance
-                                    <strong>100점</strong>, LCP
-                                    <strong>0.5s</strong>, Speed Index
-                                    <strong>0.9s</strong> 달성
-                                </li>
-                            </ul>
+                            <strong>[로딩/렌더링]</strong>
+                            검색 결과·도식도 이미지 로딩 부담을 Next/Image
+                            최적화·Lazy Loading 적용으로 Lighthouse 100점, LCP
+                            0.5s, Speed Index 0.9s 달성
                         </li>
                         <li>
-                            <span class="project-sub-title">UX 개선</span>
-                            <ul>
-                                <li>
-                                    Intercepting Route 기반 모달을 활용해 페이지
-                                    이동 없이 상세 정보 확인, 이탈 방지
-                                </li>
-                            </ul>
+                            <strong>[UX]</strong>
+                            검색 결과에서 위치 보기 시 전체 페이지 이동으로
+                            맥락이 끊기던 문제를 Intercepting Route 기반 모달로
+                            변경해 페이지 이동 없이 연속 검색·위치 확인
+                            가능하도록 개선
+                        </li>
+                        <li>
+                            검색 상태를 URL query(<code>?query=</code>)로 유지해
+                            새로고침·URL 공유 시에도 검색 맥락 유지
+                        </li>
+                        <li>
+                            <code>generateMetadata</code>로 검색어·도서별 동적
+                            메타·OG 구성
+                        </li>
+                        <li>
+                            Server Actions·React <code>cache</code>로 검색·위치
+                            조회 모듈화, MySQL 파라미터 바인딩으로 인젝션 방지
+                        </li>
+                        <li>
+                            Skeleton·반응형·모달 스크롤 잠금으로 모바일 사용성
+                            고려
                         </li>
                     </ul>
                 </div>
