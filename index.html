@@ -526,6 +526,29 @@
                             >
                         </li>
                         <li>
+                            <strong>[BFF 기반 인증]</strong>
+                            인증 책임을 클라이언트에서 same-origin Route
+                            Handler( `/api/auth/*` )로 이동해, 브라우저는 BFF만
+                            호출하고 Route Handler가 backend 호출 후
+                            `Set-Cookie`를 앱 도메인 응답으로 전달하도록 하여
+                            쿠키 전송/CORS 제약과 후차단 UX 이슈를 인증 진입
+                            단계에서 구조적으로 완화
+                            <br />
+                            <a
+                                href="https://myblog-navy-kappa.vercel.app/posts/150"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >기술 블로그: 인증과 Next.js (4) - BFF 패턴
+                                &amp; Proxy Handler</a
+                            >
+                        </li>
+                        <li>
+                            <strong>[알림/FCM]</strong>
+                            FCM 알림 파이프라인을 포그라운드/백그라운드까지
+                            통합하고, BroadcastChannel 멀티탭 동기화로 중복 알림
+                            처리를 방지해 안정적인 푸시 UX를 확보했습니다.
+                        </li>
+                        <li>
                             <strong>[백엔드 협업]</strong>
                             도메인별 API 응답 DTO 불일치를 노션 팀 문서에 정리해
                             통일을 제안하고, Swagger 기반 DTO 보완에 기여
