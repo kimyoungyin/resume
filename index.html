@@ -377,10 +377,11 @@
                 </span>
                 <span class="summary-item">
                     <span class="summary-num">2.</span> 인터랙션 성능 최적화로
-                    <strong>프레임 드랍 80% 개선 및 INP 86ms</strong>를
-                    달성했으며, 서버 사이드 프리페칭과 이미지 최적화를 통해
-                    <strong>LCP 0.5s, Lighthouse 100점</strong>의 사용자 경험을
-                    구축한 경험이 있습니다.
+                    <strong>프레임 드랍 80% 개선 및 INP 80ms대</strong>를
+                    달성했으며, 이미지 전달 경로 분리와 `priority` 선요청
+                    전략으로
+                    <strong>Cold 기준 LCP 4.69s → 2.81s(약 40% 단축)</strong>의
+                    사용자 경험을 구축한 경험이 있습니다.
                 </span>
                 <span class="summary-item">
                     <span class="summary-num">3.</span> 토큰 갱신 시 발생하는
@@ -439,9 +440,7 @@
                             >Service Link</a
                         >
                         <span class="divider">|</span>
-                        <span class="project-link-private"
-                            >Private Repo (공개 예정)</span
-                        >
+                        <span class="project-link-private">Private Repo</span>
                     </span>
                 </div>
                 <div class="project-meta">
@@ -464,10 +463,13 @@
                     <ul>
                         <li>
                             <strong>[인터랙션 성능]</strong>
-                            사이드바 리사이징 시 프레임 드랍이 심해
+                            레이아웃 사이드바를 마우스·키보드로 리사이징할 때
+                            고빈도 이벤트로 인해 프레임 드랍이 과도하게 발생하고
+                            버벅임이 느껴지던 문제 &rarr;
                             <code>requestAnimationFrame</code> 기반 스케줄링을
-                            적용하여 프레임 드랍 80% 이상 개선, INP 86ms
-                            수준으로 안정화
+                            적용하여 <strong>프레임 드랍 80% 이상 개선</strong>,
+                            <strong>INP 80ms대</strong> 수준으로 안정화 수준으로
+                            안정화
                             <br />
                             <a
                                 href="https://myblog-navy-kappa.vercel.app/posts/142"
@@ -480,9 +482,17 @@
                         </li>
                         <li>
                             <strong>[상태/캐싱]</strong>
-                            댓글·증거 리스트 조회 시 동일 시나리오에서 API가
-                            4~5회 중복 호출되던 문제를 TanStack Query 쿼리 키
-                            재설계로 1회 호출 후 캐시 재사용하도록 개선
+                            댓글/증거 리스트 조회 시, 동일한 시나리오 조합이라도
+                            객체 내 배열 정령을 고려하지 않아 서로 다른 쿼리
+                            키로 인식되며 최대
+                            <strong>4~5회까지 API가 재호출</strong>되던 문제
+                            &rarr; 시나리오 토글 상태를 정렬된 집합 기반으로
+                            리팩터링하고 TanStack Query 쿼리 키를 재설계하는
+                            방안을 주도적으로 제안·적용 &rarr; 동일 시나리오
+                            조합에 대해 최초
+                            <strong>1회 호출 후</strong> 데이터가 stale 상태가
+                            되기 전까지 <strong>0회 추가 호출</strong>로 캐시를
+                            재사용하며 불필요한 API 호출 제거
                             <br />
                             <a
                                 href="https://myblog-navy-kappa.vercel.app/posts/144"
@@ -494,9 +504,18 @@
                         </li>
                         <li>
                             <strong>[인증]</strong>
-                            토큰 만료 시 Refresh 요청이 10회 이상 중복되던
-                            문제를 Singleton Promise와 재시도 큐 도입으로 1회로
-                            단일화하여 인증 흐름 안정화
+                            토큰 만료 시 보호 라우트 세션 검증과 401 인터셉터가
+                            동시에 동작하면서 Refresh 토큰 요청이
+                            <strong>최대 10회 이상 중복</strong>으로 발생하고,
+                            레이스 컨디션에 따라 세션이 끊기거나 상태가 꼬일 수
+                            있던 문제 &rarr; <code>refreshViewer</code>에
+                            <strong>Singleton Promise</strong> 패턴을 도입해
+                            refresh 호출을 항상 1회로 단일화하고 401 응답은
+                            <strong>failedQueue</strong>에 적재 후 새 토큰으로
+                            일괄 재시도하는 인터셉터 큐 패턴을 설계·구현 &rarr;
+                            중복 Refresh 호출을
+                            <strong>10회 &rarr; 1회</strong>로 축소하고 인증
+                            흐름을 안정화
                             <br />
                             <a
                                 href="https://myblog-navy-kappa.vercel.app/posts/145"
@@ -583,20 +602,33 @@
                             체감되던 문제를
                             <code>useInfiniteQuery</code> 기반 무한 스크롤·서버
                             prefetch·<code>HydrationBoundary</code> 도입으로
-                            Lighthouse 99점, LCP 약 0.5s 달성
+                            초기 로딩 체감과 스크롤 지연을 줄였습니다.
                         </li>
                         <li>
                             <strong>[SEO]</strong>
-                            검색 노출을 위해
-                            <code>metadata</code
-                            >·<code>generateMetadata</code>·<code>sitemap.xml</code>·<code>robots.txt</code>·시맨틱으로
-                            SEO 구조를 정리하여 Lighthouse SEO 100점 달성
+                            기술 블로그를 검색으로도 찾아볼 수 있도록 색인
+                            품질을 높일 필요가 있었던 문제 &rarr; App Router의
+                            <code>metadata</code> /
+                            <code>generateMetadata</code>를 활용해 페이지별
+                            title/description/OG/JSON-LD를 구성하고
+                            <code>sitemap.xml</code>, <code>robots.txt</code>,
+                            시맨틱 태그로 SEO 구조를 정리 &rarr; Lighthouse SEO
+                            <strong>100점</strong>을 달성하고 검색 엔진
+                            크롤링·색인에 유리한 구조 확보
                         </li>
                         <li>
                             <strong>[검색/필터 UX]</strong>
-                            해시태그·검색어·정렬을 URL과 동기화하고 Supabase
-                            RPC·복합 인덱스로 다중 해시태그 AND 필터를 구현해
-                            뒤로가기·URL 공유 시 검색 맥락 유지
+                            뒤로가기·새로고침·URL 공유 후에도 같은 필터 조합이
+                            재현되고, 특정 키워드/주제에 대한 글을 위키처럼
+                            빠르게 재탐색할 수 있도록, 기존 블로그 플랫폼의
+                            해시태그 분류·검색 한계를 보완하기 위해
+                            <code>URLSearchParams</code>와 React Query
+                            <code>useInfiniteQuery</code>로
+                            검색어(q)·해시태그(tag)·정렬(sort)을 URL과
+                            동기화하고 Supabase RPC
+                            <code>get_posts_with_all_hashtags</code>와 복합
+                            인덱스로 다중 해시태그 AND 필터·정렬을 서버에서
+                            처리했다.
                         </li>
                         <li>
                             <strong>[권한/보안]</strong>
@@ -669,16 +701,25 @@
                     <ul>
                         <li>
                             <strong>[도서 검색/위치 안내]</strong>
-                            700~800권 규모에서 검색 부재·수기 관리로 탐색에
-                            5~6분 소요되던 문제를 도서명 검색·책장
-                            도식도(S3)·MySQL(RDS)로 검색·위치 조회를 일원화해
-                            1~2분 내외로 단축
+                            700~800권 규모에서 검색 시스템 부재와 수기·분산
+                            관리로 자료상 위치와 실제가 달라 최대
+                            <strong>5~6분</strong> 소요되던 문제 &rarr; 도서명
+                            검색과 책장 도식도 이미지(Supabase Storage) 안내
+                            서비스를 설계·구축하고, Server Actions와
+                            PostgreSQL(Supabase)로 검색·위치 조회를 일원화
+                            &rarr; 복무 말 약 2개월간 본인이 직접 사용·안내하며
+                            운영했고, 탐색 시간을 <strong>1~2분 내외</strong>로
+                            단축
                         </li>
                         <li>
                             <strong>[로딩/렌더링]</strong>
-                            검색 결과·도식도 이미지 로딩 부담을 Next/Image
-                            최적화·Lazy Loading 적용으로 Lighthouse 100점, LCP
-                            0.5s, Speed Index 0.9s 달성
+                            검색 결과·도식도 이미지의
+                            <strong>Cold LCP 병목(4.69s)</strong>을 Supabase
+                            Storage/ImageKit CDN 경로 분리와
+                            <code>next/image</code> <code>priority</code> 선요청
+                            전략으로
+                            <strong>4.69s → 2.81s(약 40% 단축)</strong> 및 전송
+                            용량 76KB → 26KB로 개선
                         </li>
                         <li>
                             <strong>[UX]</strong>
