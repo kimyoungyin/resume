@@ -24,17 +24,24 @@ Example:
 - Include a "Basic Implementations" section per project to list standard skills explicitly.
 
 ### Project structure per entry
-1. Title + links (Service Link / GitHub / Private Repo)
-2. Meta: period | team/personal | role
-3. One-sentence overview (italic, class `project-desc`)
-4. Skills (with versions where possible)
-5. Key Achievements (2–3 D-P-S-R bullets)
-6. Basic Implementations (bullet list)
+1. `.project-head` — title + links (Service Link / GitHub / Private Repo), meta line (`회사 · 기간 · 팀 구성 · 역할`, `·` separated), one-sentence overview (`.project-desc`)
+2. Skills line (`.project-skills`, with versions where possible) — prefixed by a small `.inline-label`
+3. `Key Achievements` (`.block-label`) + 2–3 D-P-S-R bullets
+4. `Basic Implementations` (`.block-label`) + bullet list
 
 ## CSS Layout Notes
 
-- Web preview: `max-width: 900px`, responsive padding via `clamp`.
-- Print target: A3 (`@page { size: A3 }`), `max-width: 297mm`, tighter spacing overrides via `!important` in the print media query.
-- Section headers (`h2`) use `#2563eb` blue with a bottom border.
-- Project items are separated by `border-top: 2px solid #e5e7eb` (except the first).
-- Skills use a two-column CSS grid: `140px` label + `1fr` value.
+The document is a single A3-width sheet (`.sheet`, `297mm`) with a `18mm` inset, laid out as a
+two-column grid per section: a `40mm` label column (`h2`) plus the content column (`.section-body`).
+
+- Typography: Pretendard Variable (jsDelivr CDN), sizes in `pt`, spacing in `mm` so screen and print agree.
+- Accent blue is `#1e40af` (`--accent`); all palette values live as custom properties on `:root`.
+- Section headers (`h2`) are small uppercase labels with `0.18em` tracking — not underlined titles.
+- Sections are separated by `border-top: 1px solid #e4e7ec` (`.doc-section`, except the first);
+  the header rule is `2.5px solid #191d24`.
+- Project items are separated by the same `1px` rule; `.project-head` is `break-inside/after: avoid`
+  so a project's title block never lands alone at the bottom of a page.
+- Skills use a two-column grid (`dl.skills`): `36mm` label + `1fr` value.
+- Print target: A3 (`@page { size: A3; margin: 18mm }`); at print the sheet drops its own padding,
+  shadow, and width cap so the page box owns the margins.
+- Screen-only breakpoints at `1100px` / `820px` / `520px` collapse the label columns to a single column.

@@ -1,586 +1,580 @@
 <!doctype html>
-<html lang="ko" data-theme="light">
+<html lang="ko">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>이력서_김영인</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="" />
         <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossorigin=""
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;display=swap"
             rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
         />
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <!-- 헤더 -->
-        <header class="header">
-            <div class="header-text">
-                <h1>김영인</h1>
-                <div class="role">
-                    정량 지표로 성능을 개선하고 유지 가능한 구조를 설계하는
-                    프론트엔드 개발자
-                </div>
-                <ul class="contact-info">
-                    <li>
-                        <a
-                            href="/cdn-cgi/l/email-protection#532a3a3d626a6a6b666a13343e323a3f7d303c3e"
-                            aria-label="Email"
-                            ><span
-                                class="__cf_email__"
-                                data-cfemail="c3baaaadf2fafafbf6fa83a4aea2aaafeda0acae"
-                                >yin199859@gmail.com</span
-                            ></a
+        <main class="sheet">
+            <!-- 헤더 -->
+            <header class="doc-header">
+                <div class="doc-header-text">
+                    <h1>김영인</h1>
+                    <p class="role">
+                        정량 지표로 성능을 개선하고 유지 가능한 구조를 설계하는
+                        프론트엔드 개발자
+                    </p>
+                    <div class="contact">
+                        <a href="mailto:yin199859@gmail.com" aria-label="Email"
+                            >yin199859@gmail.com</a
                         >
-                    </li>
-                    <li>
+                        <span class="sep">·</span>
                         <a
                             href="https://github.com/kimyoungyin"
                             target="_blank"
                             aria-label="GitHub"
-                            >https://github.com/kimyoungyin</a
+                            >github.com/kimyoungyin</a
                         >
-                    </li>
-                    <li>
+                        <span class="sep">·</span>
                         <a
                             href="https://potfolio-rho-khaki.vercel.app/"
                             target="_blank"
                             aria-label="Portfolio"
-                            ><strong>Portfolio</strong></a
+                            class="contact-strong"
+                            >Portfolio</a
                         >
-                    </li>
-                    <li>서울 강동구</li>
-                </ul>
-            </div>
-            <img
-                class="profile-photo"
-                src="profile.jpg"
-                alt="김영인 프로필 사진"
-            />
-        </header>
-
-        <!-- Summary -->
-        <section>
-            <h2>Summary</h2>
-            <p class="summary-text">
-                <span class="summary-item">
-                    <span class="summary-num">1.</span> 정량 지표와 도메인
-                    문제를 바탕으로 <strong>성능·데이터 흐름·보안 UX</strong>를
-                    함께 설계하는 프론트엔드 개발자입니다.
-                </span>
-                <span class="summary-item">
-                    <span class="summary-num">2.</span> 인터랙션 성능 최적화로
-                    <strong>프레임 드랍 80% 개선 및 INP 80ms대</strong>를
-                    달성했으며, 이미지 전달 경로 분리와 `priority` 선요청
-                    전략으로
-                    <strong>Cold 기준 LCP 4.69s → 2.81s(약 40% 단축)</strong>의
-                    사용자 경험을 구축한 경험이 있습니다.
-                </span>
-                <span class="summary-item">
-                    <span class="summary-num">3.</span> 토큰 갱신 시 발생하는
-                    동시 401 에러를
-                    <strong>Singleton Promise와 재시도 큐</strong>로 해결해 인증
-                    흐름을 안정화했으며, 클라이언트에 흩어져 있던 인증 처리를
-                    <strong>서버 경계로 이동</strong>시켜 갱신 요청을 단일
-                    진입점으로 수렴시키고 보호 경로 접근을 조기 차단한 경험이
-                    있습니다.
-                </span>
-                <span class="summary-item">
-                    <span class="summary-num">4.</span>
-                    <strong>RHF + Zod 기반 폼 아키텍처 리팩터링</strong>으로
-                    단일 훅에 혼재된 상태·검증·분기를 책임 분리하고 검증 규칙을
-                    <strong>스키마 단일 출처</strong>로 통일했으며,
-                    <strong>FSD 구조와 ESLint/Husky 자동화</strong>를 도입해
-                    팀의 코드 품질과 정합성을 유지한 경험이 있습니다.
-                </span>
-                <span class="summary-item">
-                    <span class="summary-num">5.</span> 흩어진 기획을
-                    <strong>PRD·Tech Spec·API Spec·QA 4종 표준 템플릿과 정본
-                    판정 규칙</strong>으로 정리해 마크다운 단일 정본 체계를
-                    세우고, <strong>Epic-Story 수직 슬라이싱</strong>(Walking
-                    Skeleton 우선, 스토리별 DoR·AC·DoD 명시)으로 스토리 완료마다
-                    서비스가 독립 동작하도록 업무 프로세스를 설계한 경험이
-                    있습니다.
-                </span>
-                <span class="summary-item">
-                    <span class="summary-num">6.</span>
-                    <strong>Claude Code·Cursor AI</strong>를 실무 워크플로에
-                    통합해 설계 검토·반복 구현·리팩터링을 가속화하고 있습니다.
-                </span>
-            </p>
-        </section>
-
-        <!-- Skills -->
-        <section>
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">Languages</div>
-                <div>TypeScript, JavaScript</div>
-
-                <div class="skill-category">Frontend</div>
-                <div>
-                    React, Next.js(App Router), HTML5, CSS3, Radix UI, shadcn/ui
+                        <span class="sep">·</span>
+                        <span>서울 강동구</span>
+                    </div>
                 </div>
+                <img
+                    class="profile-photo"
+                    src="profile.jpg"
+                    alt="김영인 프로필 사진"
+                />
+            </header>
 
-                <div class="skill-category">Styling</div>
-                <div>Tailwind CSS, Styled Components</div>
-
-                <div class="skill-category">Data/State</div>
-                <div>
-                    TanStack Query(React Query), Zustand, Redux Toolkit, nuqs
-                </div>
-
-                <div class="skill-category">Forms/Validation</div>
-                <div>React Hook Form, Zod</div>
-
-                <div class="skill-category">Testing</div>
-                <div>Vitest, React Testing Library, Playwright, MSW</div>
-
-                <div class="skill-category">Backend/DB</div>
-                <div>Supabase(PostgreSQL/Auth/Storage), MySQL</div>
-
-                <div class="skill-category">Image/Media</div>
-                <div>ImageKit (CDN/이미지 변환)</div>
-
-                <div class="skill-category">Notifications</div>
-                <div>Firebase Cloud Messaging</div>
-
-                <div class="skill-category">DevOps/Tools</div>
-                <div>
-                    Git, GitHub, Vercel, AWS(S3), ESLint 9, Husky, lint-staged,
-                    pnpm
-                </div>
-
-                <div class="skill-category">Collaboration</div>
-                <div>
-                    Jira, Figma, Notion
-                </div>
-
-                <div class="skill-category">AI Tools</div>
-                <div>Claude Code, Codex, Cursor AI</div>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section>
-            <h2>Projects</h2>
-
-            <!-- Project 1 -->
-            <div class="project-item">
-                <div class="project-header">
-                    <span class="project-title">LAXIT (LALA Insight)</span>
-                    <span class="project-links">
-                        <a href="https://insight.harvester.kr" target="_blank"
-                            >Service Link</a
-                        >
-                        <span class="divider">|</span>
-                        <span class="project-link-private">Private Repo</span>
-                    </span>
-                </div>
-                <div class="project-meta">
-                    Harvester <span class="divider">|</span> 2026.05 ~ 2026.07
-                    <span class="divider">|</span> 창업팀 프로젝트(6명),
-                    2026.06~07 정규직 전환 <span class="divider">|</span>
-                    프론트엔드 리드(기획 문서 체계·업무 프로세스 설계, 인증,
-                    온보딩, 수집 설정, 결제 개발, QA)
-                </div>
-                <div class="project-desc">
-                    아티스트·브랜드의 내부/외부 채널 반응을 자동 수집·분석해
-                    평판 보고서로 제공하는 B2B SaaS. 이전 버전의 온보딩·설정
-                    복잡도를 걷어내고 재설계한 후속 제품
-                </div>
-                <div class="project-details">
-                    <!-- detail:laxit:start -->
-                    <p>
-                        <span class="project-sub-title">Skills</span>
-                        Next.js 15(App Router), React 19, TypeScript 5, TanStack
-                        Query 5, nuqs, React Hook Form, Zod, Tailwind CSS 4,
-                        shadcn/ui, MSW, Vitest, React Testing Library, pnpm,
-                        Jira, Figma
-                    </p>
-                    <p>
-                        <span class="project-sub-title">Key Achievements</span>
-                    </p>
-                    <ul>
+            <!-- Summary -->
+            <section class="doc-section doc-section--first">
+                <h2>Summary</h2>
+                <div class="section-body">
+                    <ol class="summary">
                         <li>
-                            <strong>[개발 프로세스]</strong> 기획 문서가 흩어져
-                            있어 스프린트 착수 시점에 팀원마다 다른 설계를 보고
-                            들어갔고, 각자 쓰는 AI 코딩 도구는 권한 문제로 기획
-                            문서를 직접 읽지 못해 매번 사람이 요약해 전달 &rarr;
-                            PRD/Tech Spec/API Spec/QA
-                            <strong>4종 표준 템플릿과 정본 판정 규칙</strong>(문서
-                            충돌 시 무엇이 이기는지)을 정의해
-                            <strong>마크다운 단일 정본 체계</strong>로 이관하고,
-                            코드 저장소 규칙에 &ldquo;기능 작업 전 해당 문서부터
-                            읽는다&rdquo;를 배선 &rarr; 사람과 각자의 AI 도구가
-                            같은 문서를 정본으로 참조하도록 통일
+                            정량 지표와 도메인 문제를 바탕으로
+                            <strong>성능·데이터 흐름·보안 UX</strong>를 함께
+                            설계하는 프론트엔드 개발자입니다.
                         </li>
                         <li>
-                            <strong>[업무 설계]</strong> 스토리가 계층 단위로
-                            쪼개져 스프린트 중간엔 동작하는 화면이 없고 리스크가
-                            통합 시점에 몰림 &rarr;
-                            <strong>Epic-Story 수직 슬라이싱</strong>을 주도
-                            설계(해피패스를 관통하는
-                            <strong>Walking Skeleton</strong>을 첫 스토리로 잡고
-                            가드·엣지·분기를 후속 스토리로 확장, 스토리마다
-                            DoR·AC(Given-When-Then)·DoD·Out of scope 명시) &rarr;
-                            스토리 완료마다 서비스가 독립 동작하는 상태를
-                            유지하고, 브랜치·PR을 스토리와 1:1 대응시켜 리뷰
-                            단위 축소
-                        </li>
-                    </ul>
-                    <p>
-                        <span class="project-sub-title"
-                            >Basic Implementations</span
-                        >
-                    </p>
-                    <ul>
-                        <li>
-                            OAuth 기반 단일 인증 전환(휴대폰 인증 발송·검증,
-                            재발송 쿨다운 선제 UX, 실패 원인별 안내와 단계별
-                            재시도 액션)
-                        </li>
-                        <li>
-                            토큰 갱신 요청을 단일 진입점으로 수렴시키고 로그아웃
-                            중 세션 복원 경합 차단, 라우트 그룹 단위 접근 가드
-                            배선
-                        </li>
-                        <li>
-                            설정 화면의 접근 제어·미저장 변경 이탈 가드·재연동
-                            안내, 한글 IME 조합 입력 오류 방지, 안내 시각 표기
-                            고정
-                        </li>
-                        <li>
-                            레이어 의존 방향을 커스텀 ESLint 룰로 강제하고
-                            레이어별 테스트 정책 문서화, 목 API &harr; 실 API
-                            전환 스위치로 백엔드 선행 개발 지원
-                        </li>
-                    </ul>
-                    <!-- detail:laxit:end -->
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-item">
-                <div class="project-header">
-                    <span class="project-title">Harvester-LALA</span>
-                    <span class="project-links">
-                        <a href="https://lala.harvester.kr" target="_blank"
-                            >Service Link</a
-                        >
-                        <span class="divider">|</span>
-                        <span class="project-link-private">Private Repo</span>
-                    </span>
-                </div>
-                <div class="project-meta">
-                    Harvester <span class="divider">|</span> 2026.01 ~ 2026.04
-                    <span class="divider">|</span> 창업팀 프로젝트(6명)
-                    <span class="divider">|</span> 프론트엔드 리드(인증, 폼
-                    아키텍처 리팩터링, 레이아웃 구조 설계, 성능 최적화, 알림,
-                    CI/CD 구축)
-                </div>
-                <div class="project-desc">
-                    댓글 수집 및 AI 분석 기반으로, 사용자의 추가 관여 없이
-                    평판을 자동 수집·분석·관리하는 B2B 웹 서비스
-                </div>
-                <div class="project-details">
-                    <!-- detail:lala:start -->
-                    <p>
-                        <span class="project-sub-title">Skills</span>
-                        Next.js 15, React 18, TypeScript 5, TanStack Query 5,
-                        Zustand 4, Axios, React Hook Form, Zod, Tailwind CSS,
-                        Radix UI, FCM, Vitest, MSW, Playwright, ESLint 9, Husky
-                    </p>
-                    <p>
-                        <span class="project-sub-title">Key Achievements</span>
-                    </p>
-                    <ul>
-                        <li>
-                            <strong>[인터랙션 성능]</strong> 레이아웃 사이드바
-                            리사이즈에서 고빈도 이벤트로 프레임 드랍/버벅임 발생
-                            &rarr; <code>requestAnimationFrame</code> 기반
-                            스케줄링 적용 &rarr; 프레임 드랍 80%+ 개선 및 INP
-                            80ms대 안정화
-                            <br />
-                            <a
-                                href="https://myblog-navy-kappa.vercel.app/posts/142"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                기술 블로그: 웹 접근성(WAI-ARIA) 준수 및 rAF
-                                인터랙션 최적화
-                            </a>
-                        </li>
-                        <li>
-                            <strong>[상태/캐싱]</strong> 다중 선택 토글에서 객체
-                            배열 정렬 불일치로 쿼리 키가 흔들려 최대 4~5회 API
-                            재호출 &rarr; 정렬된 집합 기반 리팩터링 및 쿼리 키
-                            재설계 &rarr; 동일 조합은 최초 1회 호출 후 stale 전
-                            추가 0회로 캐시 재사용
-                            <br />
-                            <a
-                                href="https://myblog-navy-kappa.vercel.app/posts/144"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                기술 블로그: TanStack Query 캐시 키 안정화 &mdash;
-                                다중 선택 상태를 정렬 기반 집합으로 리팩토링
-                            </a>
-                        </li>
-                    </ul>
-                    <p>
-                        <span class="project-sub-title"
-                            >Basic Implementations</span
-                        >
-                    </p>
-                    <ul>
-                        <li>
-                            App Router + FSD 레이어 표준화(ESLint 의존성 방향
-                            고정), WAI-ARIA·키보드 조작 반영
-                        </li>
-                        <li>
-                            폼 상태·검증·분기가 단일 훅에 몰려 있던 구조를 RHF +
-                            Zod 기반으로 재설계해 책임 분리
-                        </li>
-                        <li>
-                            FCM+BroadcastChannel 멀티탭 알림 동기화, Vitest+MSW
-                            유닛&rarr;통합&rarr;E2E 인증 테스트·회귀 차단, DTO
-                            불일치 문서화로 협업 비용 절감
-                        </li>
-                    </ul>
-                    <!-- detail:lala:end -->
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-item">
-                <div class="project-header">
-                    <span class="project-title">Myblog</span>
-                    <span class="project-links">
-                        <a
-                            href="https://myblog-navy-kappa.vercel.app"
-                            target="_blank"
-                            >Service Link</a
-                        >
-                        <span class="divider">|</span>
-                        <a
-                            href="https://github.com/kimyoungyin/myblog"
-                            target="_blank"
-                            >GitHub</a
-                        >
-                    </span>
-                </div>
-                <div class="project-meta">
-                    2025.08 ~ 2025.09 <span class="divider">|</span> 개인
-                    프로젝트(100%)
-                    <span class="divider">|</span> 기획·설계·구현·배포 전담
-                </div>
-                <div class="project-desc">
-                    Velog에서 부족했던 해시태그 AND 필터·검색을 직접 구현해,
-                    내용이 기억나지 않을 때 해시태그로 빠르게 재탐색할 수 있는
-                    위키형 개인 기술 블로그
-                </div>
-                <div class="project-details">
-                    <p>
-                        <span class="project-sub-title">Skills</span>
-                        Next.js 15, React 19, TypeScript 5, TanStack Query 5,
-                        Zustand 5, Supabase(PostgreSQL/Auth/Storage), Tailwind
-                        CSS 4, shadcn/ui, Zod
-                    </p>
-                    <p>
-                        <span class="project-sub-title">Key Achievements</span>
-                    </p>
-                    <ul>
-                        <li>
-                            <strong>[성능/캐시]</strong> 동일 게시글 재방문에도
-                            매번 DB 조회, SSR/CSR queryKey 불일치로 hydration 후
-                            중복 fetch 발생 &rarr; <code>unstable_cache</code> +
+                            인터랙션 성능 최적화로
+                            <strong>프레임 드랍 80% 개선 및 INP 80ms대</strong>를
+                            달성했으며, 이미지 전달 경로 분리와
+                            <code>priority</code> 선요청 전략으로
                             <strong
-                                >태그 3종
-                                분리(<code>posts</code>·<code>comments</code>·<code>hashtags</code>)</strong
-                            >로 무효화 범위 제어, <code>cache-tags.ts</code>로
-                            태그·키 중앙화, 목록·검색을
-                            prefetch/dehydrate/HydrationBoundary 단일 계약으로
-                            통일, polling 제거 &rarr; mutation 후
-                            <code>revalidateTag</code> +
-                            <code>invalidateQueries</code> 연결 &rarr;
-                            <strong>캐시 히트 시 DB 쿼리 0건</strong>(Supabase
-                            API 로그 기준), 백그라운드 불필요 요청 0건
+                                >Cold 기준 LCP 4.69s → 2.81s(약 40% 단축)</strong
+                            >의 사용자 경험을 구축한 경험이 있습니다.
                         </li>
                         <li>
-                            <strong>[SEO]</strong> 검색 유입을 위해 색인 품질을
-                            높일 필요 &rarr; App Router <code>metadata</code>/
-                            <code>generateMetadata</code>로 페이지별
-                            title/description/OG/JSON-LD를 구성하고
-                            <code>sitemap.xml</code>, <code>robots.txt</code>,
-                            semantic tags를 정리 &rarr; 색인 대상 페이지
-                            <strong>100% 커버</strong>(sitemap·robots·JSON-LD
-                            정합)
+                            토큰 갱신 시 발생하는 동시 401 에러를
+                            <strong>Singleton Promise와 재시도 큐</strong>로
+                            해결해 인증 흐름을 안정화했으며, 클라이언트에 흩어져
+                            있던 인증 처리를
+                            <strong>서버 경계로 이동</strong>시켜 갱신 요청을
+                            단일 진입점으로 수렴시키고 보호 경로 접근을 조기
+                            차단한 경험이 있습니다.
                         </li>
                         <li>
-                            <strong>[검색/필터 UX]</strong>
-                            뒤로가기·새로고침·URL 공유 후에도 동일 필터 조합
-                            재현이 어려워 탐색 흐름이 끊김 &rarr;
-                            <code>URLSearchParams</code> 동기화와
-                            <code>useInfiniteQuery</code> 기반 검색을 구성하고,
-                            Supabase RPC
-                            <code>get_posts_with_all_hashtags</code>로 다중
-                            해시태그 AND/정렬을 서버 처리 &rarr; 동일 조건 재현
-                        </li>
-                    </ul>
-                    <p>
-                        <span class="project-sub-title"
-                            >Basic Implementations</span
-                        >
-                    </p>
-                    <ul>
-                        <li>
-                            useInfiniteQuery + IntersectionObserver 무한 스크롤,
-                            Suspense/Skeleton
+                            <strong>RHF + Zod 기반 폼 아키텍처 리팩터링</strong>으로
+                            단일 훅에 혼재된 상태·검증·분기를 책임 분리하고 검증
+                            규칙을 <strong>스키마 단일 출처</strong>로
+                            통일했으며,
+                            <strong>FSD 구조와 ESLint/Husky 자동화</strong>를
+                            도입해 팀의 코드 품질과 정합성을 유지한 경험이
+                            있습니다.
                         </li>
                         <li>
-                            Supabase OAuth/RLS/Middleware/Server Actions로
-                            Admin-only 쓰기·수정·삭제 권한 제어
-                        </li>
-                        <li>
-                            마크다운 실시간 미리보기, 드래그&드롭 이미지 업로드,
-                            Zod 검증으로 입력 신뢰도 확보
-                        </li>
-                        <li>
-                            잘못된 HTML 중첩으로 인한 hydration 오류 차단 —
-                            <code>next/image</code>·GFM·구문 강조·<strong
-                                >Mermaid 커스텀 컴포넌트</strong
-                            >로 마크다운 렌더 안정화
-                        </li>
-                        <li>
-                            QueryClient 분리 및 쿼리 키 팩토리로 캐시 invalidate
-                            키를 일관화하고 좋아요 동기화 정책 적용
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="project-item">
-                <div class="project-header">
-                    <span class="project-title"
-                        >승룡이네집 도서 검색 시스템</span
-                    >
-                    <span class="project-links">
-                        <a href="https://seongryung.vercel.app" target="_blank"
-                            >Service Link</a
-                        >
-                        <span class="divider">|</span>
-                        <a
-                            href="https://github.com/kimyoungyin/seongryung"
-                            target="_blank"
-                            >GitHub</a
-                        >
-                    </span>
-                </div>
-                <div class="project-meta">
-                    2025.03 ~ 2025.04 <span class="divider">|</span> 개인
-                    프로젝트(100%) <span class="divider">|</span> 프론트엔드
-                    (기획·설계·구현·배포)
-                </div>
-                <div class="project-desc">
-                    군 복무 중 700~800권 규모 도서에 대한 검색 시스템이 없고,
-                    수기/분산 관리로 자료와 실제 위치가 어긋나던 문제를 해결하기
-                    위해 개발한 도서 위치 안내 서비스
-                </div>
-                <div class="project-details">
-                    <p>
-                        <span class="project-sub-title">Skills</span>
-                        Next.js 15, React 19, TypeScript, Tailwind CSS,
-                        Supabase(PostgreSQL), ImageKit CDN, Vercel
-                    </p>
-                    <p>
-                        <span class="project-sub-title">Key Achievements</span>
-                    </p>
-                    <ul>
-                        <li>
-                            <strong>[성능(LCP)]</strong> Cold Start에서 LCP가
-                            4.69s 까지 지연 &rarr; ImageKit CDN 경로 분리 +
-                            <code>next/image</code>
-                            priority/sizes/ 로더 최적화 &rarr; 4.69s→2.81s(약
-                            40% 단축), 전송 용량 76KB→26KB로 개선
-                        </li>
-                        <li>
-                            <strong>[전환 성능]</strong> 검색 후 상세 페이지
-                            진입 후 지도 이미지 요청이 늦게 시작돼 전환 직후
-                            체감 지연 &rarr;
-                            <code>onMouseEnter</code
-                            >/<code>onPointerDown</code>에서
-                            <code>new Image()</code> preload로 네비게이션 전
-                            요청 &rarr; ~5.8s→~4.3s로 전환 타임라인 개선
-                        </li>
-                        <li>
-                            <strong>[데이터 흐름]</strong> 모달 마운트 후
-                            useEffect → Server Action → DB 조회 → location 확정
-                            → 이미지 렌더로 이어지는 순차 워터폴 &rarr; href에
-                            <strong><code>?loc=N</code> URL 파라미터</strong>
-                            전달, <code>useSearchParams()</code>로 마운트 시점에
-                            location 동기 확정 (hard navigation은 DB 폴백 유지)
-                            &rarr; soft navigation 경로
-                            <strong>Server Action 호출 0건</strong>, 모달 이미지
+                            흩어진 기획을
                             <strong
-                                >transferSize 0B(캐시 히트) · ~1ms 렌더</strong
-                            >, skeleton 표시 구간 소멸
+                                >PRD·Tech Spec·API Spec·QA 4종 표준 템플릿과 정본
+                                판정 규칙</strong
+                            >으로 정리해 마크다운 단일 정본 체계를 세우고,
+                            <strong>Epic-Story 수직 슬라이싱</strong>(Walking
+                            Skeleton 우선, 스토리별 DoR·AC·DoD 명시)으로 스토리
+                            완료마다 서비스가 독립 동작하도록 업무 프로세스를
+                            설계한 경험이 있습니다.
                         </li>
                         <li>
-                            <strong>[UX]</strong> Hard navigation으로 맥락이
-                            끊겨 탐색 효율 저하 &rarr; Intercepting/Parallel
-                            route 모달과 스크롤 잠금, 모달 top 보정 적용 &rarr;
-                            연속 검색/위치 확인 UX 안정화
+                            <strong>Claude Code·Cursor AI</strong>를 실무
+                            워크플로에 통합해 설계 검토·반복 구현·리팩터링을
+                            가속화하고 있습니다.
                         </li>
-                    </ul>
-                    <p>
-                        <span class="project-sub-title"
-                            >Basic Implementations</span
-                        >
-                    </p>
-                    <ul>
-                        <li>URL query로 검색 상태 유지(새로고침/공유 재현)</li>
-                        <li>
-                            Suspense/Skeleton + 반응형 레이아웃과 모달 스크롤
-                            잠금
-                        </li>
-                        <li>
-                            <code>generateMetadata</code>로 검색/상세 SEO 및 OG
-                            동적 구성
-                        </li>
-                        <li>
-                            ImageKit/next/image 전달 최적화 + 터치 대응(preload
-                            onPointerDown)
-                        </li>
-                    </ul>
+                    </ol>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Education -->
-        <section>
-            <h2>Education</h2>
-            <div class="education-item">
-                <span class="edu-school"
-                    >동국대학교(서울) 식품생명공학과 졸업</span
-                >
-                <span class="edu-period">2018.02 ~ 2023.07</span>
-            </div>
-            <p class="project-desc">
-                교양 수업에서 프로그래밍을 처음 접한 후, 소프트웨어로 문제를
-                해결하고 서비스를 직접 배포할 수 있다는 점에 매력을 느껴 졸업 전
-                개발자로 전향을 결심했습니다.
-            </p>
-        </section>
+            <!-- Skills -->
+            <section class="doc-section">
+                <h2>Skills</h2>
+                <div class="section-body">
+                    <dl class="skills">
+                        <dt>Languages</dt>
+                        <dd>TypeScript, JavaScript</dd>
 
-        <script
-            data-cfasync="false"
-            src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
-        ></script>
+                        <dt>Frontend</dt>
+                        <dd>
+                            React, Next.js(App Router), HTML5, CSS3, Radix UI,
+                            shadcn/ui
+                        </dd>
+
+                        <dt>Styling</dt>
+                        <dd>Tailwind CSS, Styled Components</dd>
+
+                        <dt>Data/State</dt>
+                        <dd>
+                            TanStack Query(React Query), Zustand, Redux Toolkit,
+                            nuqs
+                        </dd>
+
+                        <dt>Forms/Validation</dt>
+                        <dd>React Hook Form, Zod</dd>
+
+                        <dt>Testing</dt>
+                        <dd>Vitest, React Testing Library, Playwright, MSW</dd>
+
+                        <dt>Backend/DB</dt>
+                        <dd>Supabase(PostgreSQL/Auth/Storage), MySQL</dd>
+
+                        <dt>Image/Media</dt>
+                        <dd>ImageKit (CDN/이미지 변환)</dd>
+
+                        <dt>Notifications</dt>
+                        <dd>Firebase Cloud Messaging</dd>
+
+                        <dt>DevOps/Tools</dt>
+                        <dd>
+                            Git, GitHub, Vercel, AWS(S3), ESLint 9, Husky,
+                            lint-staged, pnpm
+                        </dd>
+
+                        <dt>Collaboration</dt>
+                        <dd>Jira, Figma, Notion</dd>
+
+                        <dt>AI Tools</dt>
+                        <dd>Claude Code, Codex, Cursor AI</dd>
+                    </dl>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section class="doc-section">
+                <h2>Projects</h2>
+                <div class="section-body">
+                    <!-- Project 1 -->
+                    <article class="project">
+                        <div class="project-head">
+                            <div class="project-title-row">
+                                <h3>LAXIT (LALA Insight)</h3>
+                                <span class="project-links">
+                                    <a
+                                        href="https://insight.harvester.kr"
+                                        target="_blank"
+                                        >Service Link</a
+                                    >
+                                    <span class="sep">|</span>
+                                    <span class="project-link-private"
+                                        >Private Repo</span
+                                    >
+                                </span>
+                            </div>
+                            <p class="project-meta">
+                                Harvester · 2026.05 ~ 2026.07 · 창업팀
+                                프로젝트(6명), 2026.06~07 정규직 전환 ·
+                                프론트엔드 리드(기획 문서 체계·업무 프로세스
+                                설계, 인증, 온보딩, 수집 설정, 결제 개발, QA)
+                            </p>
+                            <p class="project-desc">
+                                아티스트·브랜드의 내부/외부 채널 반응을 자동
+                                수집·분석해 평판 보고서로 제공하는 B2B SaaS.
+                                이전 버전의 온보딩·설정 복잡도를 걷어내고
+                                재설계한 후속 제품
+                            </p>
+                        </div>
+                        <!-- detail:laxit:start -->
+                        <p class="project-skills">
+                            <span class="inline-label">Skills</span>Next.js
+                            15(App Router), React 19, TypeScript 5, TanStack
+                            Query 5, nuqs, React Hook Form, Zod, Tailwind CSS 4,
+                            shadcn/ui, MSW, Vitest, React Testing Library, pnpm,
+                            Jira, Figma
+                        </p>
+                        <p class="block-label">Key Achievements</p>
+                        <ul>
+                            <li>
+                                <strong>[개발 프로세스]</strong> 기획 문서가
+                                흩어져 있어 스프린트 착수 시점에 팀원마다 다른
+                                설계를 보고 들어갔고, 각자 쓰는 AI 코딩 도구는
+                                권한 문제로 기획 문서를 직접 읽지 못해 매번
+                                사람이 요약해 전달 &rarr; PRD/Tech Spec/API
+                                Spec/QA
+                                <strong>4종 표준 템플릿과 정본 판정 규칙</strong
+                                >(문서 충돌 시 무엇이 이기는지)을 정의해
+                                <strong>마크다운 단일 정본 체계</strong>로
+                                이관하고, 코드 저장소 규칙에 &ldquo;기능 작업 전
+                                해당 문서부터 읽는다&rdquo;를 배선 &rarr; 사람과
+                                각자의 AI 도구가 같은 문서를 정본으로 참조하도록
+                                통일
+                            </li>
+                            <li>
+                                <strong>[업무 설계]</strong> 스토리가 계층
+                                단위로 쪼개져 스프린트 중간엔 동작하는 화면이
+                                없고 리스크가 통합 시점에 몰림 &rarr;
+                                <strong>Epic-Story 수직 슬라이싱</strong>을 주도
+                                설계(해피패스를 관통하는
+                                <strong>Walking Skeleton</strong>을 첫 스토리로
+                                잡고 가드·엣지·분기를 후속 스토리로 확장,
+                                스토리마다 DoR·AC(Given-When-Then)·DoD·Out of
+                                scope 명시) &rarr; 스토리 완료마다 서비스가 독립
+                                동작하는 상태를 유지하고, 브랜치·PR을 스토리와
+                                1:1 대응시켜 리뷰 단위 축소
+                            </li>
+                        </ul>
+                        <p class="block-label">Basic Implementations</p>
+                        <ul>
+                            <li>
+                                OAuth 기반 단일 인증 전환(휴대폰 인증 발송·검증,
+                                재발송 쿨다운 선제 UX, 실패 원인별 안내와 단계별
+                                재시도 액션)
+                            </li>
+                            <li>
+                                토큰 갱신 요청을 단일 진입점으로 수렴시키고
+                                로그아웃 중 세션 복원 경합 차단, 라우트 그룹
+                                단위 접근 가드 배선
+                            </li>
+                            <li>
+                                설정 화면의 접근 제어·미저장 변경 이탈
+                                가드·재연동 안내, 한글 IME 조합 입력 오류 방지,
+                                안내 시각 표기 고정
+                            </li>
+                            <li>
+                                레이어 의존 방향을 커스텀 ESLint 룰로 강제하고
+                                레이어별 테스트 정책 문서화, 목 API &harr; 실
+                                API 전환 스위치로 백엔드 선행 개발 지원
+                            </li>
+                        </ul>
+                        <!-- detail:laxit:end -->
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project">
+                        <div class="project-head">
+                            <div class="project-title-row">
+                                <h3>LALA</h3>
+                                <span class="project-links">
+                                    <a
+                                        href="https://lala.harvester.kr"
+                                        target="_blank"
+                                        >Service Link</a
+                                    >
+                                    <span class="sep">|</span>
+                                    <span class="project-link-private"
+                                        >Private Repo</span
+                                    >
+                                </span>
+                            </div>
+                            <p class="project-meta">
+                                Harvester · 2026.01 ~ 2026.04 · 창업팀
+                                프로젝트(6명) · 프론트엔드 리드(인증, 폼
+                                아키텍처 리팩터링, 레이아웃 구조 설계, 성능
+                                최적화, 알림, CI/CD 구축)
+                            </p>
+                            <p class="project-desc">
+                                댓글 수집 및 AI 분석 기반으로, 사용자의 추가
+                                관여 없이 평판을 자동 수집·분석·관리하는 B2B 웹
+                                서비스
+                            </p>
+                        </div>
+                        <!-- detail:lala:start -->
+                        <p class="project-skills">
+                            <span class="inline-label">Skills</span>Next.js 15,
+                            React 18, TypeScript 5, TanStack Query 5, Zustand 4,
+                            Axios, React Hook Form, Zod, Tailwind CSS, Radix UI,
+                            FCM, Vitest, MSW, Playwright, ESLint 9, Husky
+                        </p>
+                        <p class="block-label">Key Achievements</p>
+                        <ul>
+                            <li>
+                                <strong>[인터랙션 성능]</strong> 레이아웃
+                                사이드바 리사이즈에서 고빈도 이벤트로 프레임
+                                드랍/버벅임 발생 &rarr;
+                                <code>requestAnimationFrame</code> 기반 스케줄링
+                                적용 &rarr; 프레임 드랍 80%+ 개선 및 INP 80ms대
+                                안정화
+                                <span class="ref-link"
+                                    ><a
+                                        href="https://myblog-navy-kappa.vercel.app/posts/142"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        >기술 블로그: 웹 접근성(WAI-ARIA) 준수 및
+                                        rAF 인터랙션 최적화</a
+                                    ></span
+                                >
+                            </li>
+                            <li>
+                                <strong>[상태/캐싱]</strong> 다중 선택 토글에서
+                                객체 배열 정렬 불일치로 쿼리 키가 흔들려 최대
+                                4~5회 API 재호출 &rarr; 정렬된 집합 기반
+                                리팩터링 및 쿼리 키 재설계 &rarr; 동일 조합은
+                                최초 1회 호출 후 stale 전 추가 0회로 캐시 재사용
+                                <span class="ref-link"
+                                    ><a
+                                        href="https://myblog-navy-kappa.vercel.app/posts/144"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        >기술 블로그: TanStack Query 캐시 키
+                                        안정화 &mdash; 다중 선택 상태를 정렬 기반
+                                        집합으로 리팩토링</a
+                                    ></span
+                                >
+                            </li>
+                        </ul>
+                        <p class="block-label">Basic Implementations</p>
+                        <ul>
+                            <li>
+                                App Router + FSD 레이어 표준화(ESLint 의존성
+                                방향 고정), WAI-ARIA·키보드 조작 반영
+                            </li>
+                            <li>
+                                폼 상태·검증·분기가 단일 훅에 몰려 있던 구조를
+                                RHF + Zod 기반으로 재설계해 책임 분리
+                            </li>
+                            <li>
+                                FCM+BroadcastChannel 멀티탭 알림 동기화,
+                                Vitest+MSW 유닛&rarr;통합&rarr;E2E 인증
+                                테스트·회귀 차단, DTO 불일치 문서화로 협업 비용
+                                절감
+                            </li>
+                        </ul>
+                        <!-- detail:lala:end -->
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project">
+                        <div class="project-head">
+                            <div class="project-title-row">
+                                <h3>Myblog</h3>
+                                <span class="project-links">
+                                    <a
+                                        href="https://myblog-navy-kappa.vercel.app"
+                                        target="_blank"
+                                        >Service Link</a
+                                    >
+                                    <span class="sep">|</span>
+                                    <a
+                                        href="https://github.com/kimyoungyin/myblog"
+                                        target="_blank"
+                                        >GitHub</a
+                                    >
+                                </span>
+                            </div>
+                            <p class="project-meta">
+                                2025.08 ~ 2025.09 · 개인 프로젝트(100%) ·
+                                기획·설계·구현·배포 전담
+                            </p>
+                            <p class="project-desc">
+                                Velog에서 부족했던 해시태그 AND 필터·검색을 직접
+                                구현해, 내용이 기억나지 않을 때 해시태그로 빠르게
+                                재탐색할 수 있는 위키형 개인 기술 블로그
+                            </p>
+                        </div>
+                        <p class="project-skills">
+                            <span class="inline-label">Skills</span>Next.js 15,
+                            React 19, TypeScript 5, TanStack Query 5, Zustand 5,
+                            Supabase(PostgreSQL/Auth/Storage), Tailwind CSS 4,
+                            shadcn/ui, Zod
+                        </p>
+                        <p class="block-label">Key Achievements</p>
+                        <ul>
+                            <li>
+                                <strong>[성능/캐시]</strong> 동일 게시글
+                                재방문에도 매번 DB 조회, SSR/CSR queryKey
+                                불일치로 hydration 후 중복 fetch 발생 &rarr;
+                                <code>unstable_cache</code> +
+                                <strong
+                                    >태그 3종 분리(posts·comments·hashtags)</strong
+                                >로 무효화 범위 제어,
+                                <code>cache-tags.ts</code>로 태그·키 중앙화,
+                                목록·검색을 prefetch/dehydrate/HydrationBoundary
+                                단일 계약으로 통일, polling 제거 &rarr; mutation
+                                후 <code>revalidateTag</code> +
+                                <code>invalidateQueries</code> 연결 &rarr;
+                                <strong>캐시 히트 시 DB 쿼리 0건</strong>(Supabase
+                                API 로그 기준), 백그라운드 불필요 요청 0건
+                            </li>
+                            <li>
+                                <strong>[SEO]</strong> 검색 유입을 위해 색인
+                                품질을 높일 필요 &rarr; App Router
+                                <code>metadata</code>/<code
+                                    >generateMetadata</code
+                                >로 페이지별 title/description/OG/JSON-LD를
+                                구성하고 <code>sitemap.xml</code>,
+                                <code>robots.txt</code>, semantic tags를 정리
+                                &rarr; 색인 대상 페이지
+                                <strong>100% 커버</strong>(sitemap·robots·JSON-LD
+                                정합)
+                            </li>
+                            <li>
+                                <strong>[검색/필터 UX]</strong>
+                                뒤로가기·새로고침·URL 공유 후에도 동일 필터 조합
+                                재현이 어려워 탐색 흐름이 끊김 &rarr;
+                                <code>URLSearchParams</code> 동기화와
+                                <code>useInfiniteQuery</code> 기반 검색을
+                                구성하고, Supabase RPC
+                                <code>get_posts_with_all_hashtags</code>로 다중
+                                해시태그 AND/정렬을 서버 처리 &rarr; 동일 조건
+                                재현
+                            </li>
+                        </ul>
+                        <p class="block-label">Basic Implementations</p>
+                        <ul>
+                            <li>
+                                useInfiniteQuery + IntersectionObserver 무한
+                                스크롤, Suspense/Skeleton
+                            </li>
+                            <li>
+                                Supabase OAuth/RLS/Middleware/Server Actions로
+                                Admin-only 쓰기·수정·삭제 권한 제어
+                            </li>
+                            <li>
+                                마크다운 실시간 미리보기, 드래그&amp;드롭 이미지
+                                업로드, Zod 검증으로 입력 신뢰도 확보
+                            </li>
+                            <li>
+                                잘못된 HTML 중첩으로 인한 hydration 오류 차단
+                                &mdash; <code>next/image</code>·GFM·구문
+                                강조·<strong>Mermaid 커스텀 컴포넌트</strong>로
+                                마크다운 렌더 안정화
+                            </li>
+                            <li>
+                                QueryClient 분리 및 쿼리 키 팩토리로 캐시
+                                invalidate 키를 일관화하고 좋아요 동기화 정책
+                                적용
+                            </li>
+                        </ul>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article class="project">
+                        <div class="project-head">
+                            <div class="project-title-row">
+                                <h3>승룡이네집 도서 검색 시스템</h3>
+                                <span class="project-links">
+                                    <a
+                                        href="https://seongryung.vercel.app"
+                                        target="_blank"
+                                        >Service Link</a
+                                    >
+                                    <span class="sep">|</span>
+                                    <a
+                                        href="https://github.com/kimyoungyin/seongryung"
+                                        target="_blank"
+                                        >GitHub</a
+                                    >
+                                </span>
+                            </div>
+                            <p class="project-meta">
+                                2025.03 ~ 2025.04 · 개인 프로젝트(100%) ·
+                                프론트엔드 (기획·설계·구현·배포)
+                            </p>
+                            <p class="project-desc">
+                                군 복무 중 700~800권 규모 도서에 대한 검색
+                                시스템이 없고, 수기/분산 관리로 자료와 실제
+                                위치가 어긋나던 문제를 해결하기 위해 개발한 도서
+                                위치 안내 서비스
+                            </p>
+                        </div>
+                        <p class="project-skills">
+                            <span class="inline-label">Skills</span>Next.js 15,
+                            React 19, TypeScript, Tailwind CSS,
+                            Supabase(PostgreSQL), ImageKit CDN, Vercel
+                        </p>
+                        <p class="block-label">Key Achievements</p>
+                        <ul>
+                            <li>
+                                <strong>[성능(LCP)]</strong> Cold Start에서 LCP가
+                                4.69s 까지 지연 &rarr; ImageKit CDN 경로 분리 +
+                                <code>next/image</code> priority/sizes/로더
+                                최적화 &rarr; 4.69s→2.81s(약 40% 단축), 전송
+                                용량 76KB→26KB로 개선
+                            </li>
+                            <li>
+                                <strong>[전환 성능]</strong> 검색 후 상세 페이지
+                                진입 후 지도 이미지 요청이 늦게 시작돼 전환 직후
+                                체감 지연 &rarr;
+                                <code>onMouseEnter</code>/<code
+                                    >onPointerDown</code
+                                >에서 <code>new Image()</code> preload로
+                                네비게이션 전 요청 &rarr; ~5.8s→~4.3s로 전환
+                                타임라인 개선
+                            </li>
+                            <li>
+                                <strong>[데이터 흐름]</strong> 모달 마운트 후
+                                useEffect → Server Action → DB 조회 → location
+                                확정 → 이미지 렌더로 이어지는 순차 워터폴 &rarr;
+                                href에
+                                <strong><code>?loc=N</code> URL 파라미터</strong>
+                                전달, <code>useSearchParams()</code>로 마운트
+                                시점에 location 동기 확정 (hard navigation은 DB
+                                폴백 유지) &rarr; soft navigation 경로
+                                <strong>Server Action 호출 0건</strong>, 모달
+                                이미지
+                                <strong
+                                    >transferSize 0B(캐시 히트) · ~1ms 렌더</strong
+                                >, skeleton 표시 구간 소멸
+                            </li>
+                            <li>
+                                <strong>[UX]</strong> Hard navigation으로 맥락이
+                                끊겨 탐색 효율 저하 &rarr; Intercepting/Parallel
+                                route 모달과 스크롤 잠금, 모달 top 보정 적용
+                                &rarr; 연속 검색/위치 확인 UX 안정화
+                            </li>
+                        </ul>
+                        <p class="block-label">Basic Implementations</p>
+                        <ul>
+                            <li>
+                                URL query로 검색 상태 유지(새로고침/공유 재현)
+                            </li>
+                            <li>
+                                Suspense/Skeleton + 반응형 레이아웃과 모달 스크롤
+                                잠금
+                            </li>
+                            <li>
+                                <code>generateMetadata</code>로 검색/상세 SEO 및
+                                OG 동적 구성
+                            </li>
+                            <li>
+                                ImageKit/next/image 전달 최적화 +
+                                터치 대응(preload onPointerDown)
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="doc-section">
+                <h2>Education</h2>
+                <div class="section-body">
+                    <div class="education-item">
+                        <div class="education-row">
+                            <span class="edu-school"
+                                >동국대학교(서울) 식품생명공학과 졸업</span
+                            >
+                            <span class="edu-period">2018.02 ~ 2023.07</span>
+                        </div>
+                        <p class="edu-desc">
+                            교양 수업에서 프로그래밍을 처음 접한 후, 소프트웨어로
+                            문제를 해결하고 서비스를 직접 배포할 수 있다는 점에
+                            매력을 느껴 졸업 전 개발자로 전향을 결심했습니다.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
     </body>
 </html>
